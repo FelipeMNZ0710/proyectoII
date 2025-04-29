@@ -1,33 +1,149 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Vortex Play - Inspirado en Steam</title>
+
+    <!-- Bootstrap CSS (desde CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Enlace a tu hoja de estilos CSS personalizada -->
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <header class="header">
-       <!--img (tenes que poner la imagen felipe)-->
-       <nav>
-        <ul class="nav-flex">
-            <li><a href="vista1.html" class="nav-link"></a></li>
-            <li><a href="vista2.html" class="nav-link"></a></li>
-            <li><a href="vista3.html" class="nav-link"></a></li>
-            <li><a href="vista4.html" class="nav-link"></a></li>
-        </ul>
-    </nav>
-    </header>
-    <main>
 
-        <!-- cartas de miño -->
-       
+    <!-- Barra de Navegación Principal Estilo Vortex -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">VORTEX PLAY</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Tienda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Juegos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Comunidad</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Noticias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Soporte</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main>
+        <!-- Contenedor del Banner con efecto opcional -->
+        <div class="hero-banner-container">
+            
+            <!-- ¡¡¡ RECUERDA CAMBIAR ESTO por la ruta a tu banner !!! -->
+            <img src="URL_DE_TU_BANNER.jpg" alt="Banner principal de Vortex Play" class="hero-banner">
+        </div>
+
+
+        <!-- Contenedor Principal del Contenido -->
+        <div class="container">
+
+            <!-- Sección Contenido Destacado -->
+            <section class="featured-content mb-5">
+                <h2 class="section-title">> DESTACADO <</h2> {/* Título con decoración */}
+                <div class="row justify-content-center">
+
+                    <!-- Tarjeta Contenido 1 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="content-card">
+                            <img src="https://via.placeholder.com/300x180/ff55a3/1b142b?text=Pixel+Quest" class="card-img-top" alt="Pixel Quest">
+                            <div class="card-body">
+                                <div>
+                                    <h5 class="card-title">Pixel Quest RPG</h5>
+                                    <p class="card-text">¡Embárcate en una aventura épica llena de píxeles y peligros!</p>
+                                </div>
+                                <a href="#" class="btn btn-vortex w-100">EXPLORAR</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta Contenido 2 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                         <div class="content-card">
+                            <img src="https://via.placeholder.com/300x180/ffd900/1b142b?text=Neon+Drive" class="card-img-top" alt="Neon Drive">
+                            <div class="card-body">
+                                <div>
+                                    <h5 class="card-title">Neon Drive '86</h5>
+                                    <p class="card-text">Siente la velocidad retro en autopistas de neón infinito.</p>
+                                </div>
+                                <a href="#" class="btn btn-vortex w-100">¡JUGAR YA!</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta Contenido 3 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                         <div class="content-card">
+                            <img src="https://via.placeholder.com/300x180/4d94ff/1b142b?text=Space+Bits" class="card-img-top" alt="Space Bits">
+                            <div class="card-body">
+                                <div>
+                                    <h5 class="card-title">Space Bit Attack</h5>
+                                    <p class="card-text">Defiende la última base humana de hordas alienígenas pixeladas.</p>
+                                </div>
+                                <a href="#" class="btn btn-vortex w-100">VER MÁS</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta Contenido 4 (Ejemplo Merch?) -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="content-card">
+                            <img src="https://via.placeholder.com/300x180/00c853/1b142b?text=Vortex+Tee" class="card-img-top" alt="Vortex Tee">
+                            <div class="card-body">
+                                <div>
+                                    <h5 class="card-title">Camiseta Oficial Vortex</h5>
+                                    <p class="card-text">Lleva el estilo Vortex Play a todas partes. ¡Edición limitada!</p>
+                                </div>
+                                <a href="#" class="btn btn-vortex w-100">CONSEGUIR</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Otra Sección (Ej: Novedades) -->
+            <section class="latest-news mb-5">
+                <h2 class="section-title">// NOVEDADES //</h2>
+                <div class="text-center p-4 rounded" style="background-color: var(--vp-element-bg); border: 2px dashed var(--vp-border-subtle);">
+                    <p class="lead" style="color: var(--vp-text-muted);">¡Mantente al día con lo último de Vortex Play!</p>
+                    <p>Próximamente: ¡Anuncios, actualizaciones y más contenido!</p>
+                    <a href="#" class="btn btn-vortex" style="background-color: var(--vp-accent-cyan); margin-top: 1rem;">Ver Archivo</a>
+                </div>
+            </section>
+
+        </div> <!-- /container -->
     </main>
-    <footer class="footer">
-        <p>© 2025 - <span class="blood-text">(frase cagada)</span></p>
+
+    <!-- Pie de Página -->
+    <footer>
+        <div class="container">
+            <p>VORTEX PLAY © 2023</p>
+            <p>Diseño inspirado en tu arte pixelado y plataformas como Steam.</p>
+            <p>
+                <a href="#">Privacidad</a> |
+                <a href="#">Términos</a> |
+                <a href="#">Cookies</a> |
+                <a href="#">Soporte</a>
+            </p>
+        </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap JS Bundle (incluye Popper) (desde CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 </body>
 </html>
