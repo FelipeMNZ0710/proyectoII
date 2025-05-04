@@ -1,1 +1,529 @@
-  
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explora la colección de juegos de PC disponibles en Vortex Play.">
+    <title>Vortex Play - Juegos de Consola</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome para Iconos de Plataforma -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Estilo personalizado -->
+    <link rel="stylesheet" href="assets/css/style.css"> <!-- Asumiendo que tienes un style.css -->
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/marca/marca_pagina.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="assets/marca/marca_pagina.png" sizes="32x32">
+
+    <!-- Estilos CSS para altura mínima de tarjetas -->
+    <style>
+        .game-card-col .content-card {
+            min-height: 530px; /* Ajusta este valor si es necesario */
+        }
+        .game-card-col .content-card .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .game-card-col .content-card .platform-links {
+            margin-top: auto;
+            padding-top: 1rem;
+        }
+        .game-card-col .content-card .card-body > button.btn-vortex {
+            margin-top: 1rem;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation">
+        <div class="container">
+            <a class="navbar-brand d-inline-flex align-items-center" href="index.html">
+                <img src="assets/img/marca_pagina.png" alt="Logo de Vortex Play" height="30" class="me-2">
+                VORTEX PLAY
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vista1.html">Juegos PC</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="vista2.html">Juegos Consola</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vista3.html">Juegos Mobile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vista4.html">Soporte</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main role="main" class="mt-4">
+        <div class="container pt-4">
+
+            <h1 id="games-title" class="section-title text-center mb-5">++ JUEGOS DE CONSOLA ++</h1>
+            <div id="filter-info" class="text-center text-muted mb-4" style="display: none;"></div>
+
+            <section id="juegos-pc" class="platform-section mb-5">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+
+                <!-- Juego PC 1: The Legend of Zelda: Breath of the Wild (Emulado) -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://assets.nintendo.eu/image/upload/f_auto,c_limit,w_992,q_auto:low/MNS/NOE/70010000000023/SQ_NSwitch_TheLegendOfZeldaBreathOfTheWild_E" class="card-img-top" alt="The Legend of Zelda: Breath of the Wild">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">The Legend of Zelda: Breath of the Wild</h5>
+                                    <p class="card-text">Explora un vasto mundo abierto lleno de misterios y aventuras en este juego aclamado por la crítica.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-success me-1">Aventura</span><span class="badge text-bg-primary me-1">Mundo Abierto</span><span class="badge text-bg-info text-dark">RPG</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://yuzu-emu.org/" target="_blank" rel="noopener noreferrer" aria-label="Emulador Yuzu" title="Emulador Yuzu"><i class="fas fa-gamepad mx-1"></i></a>
+                                            <a href="https://ryujinx.org/" target="_blank" rel="noopener noreferrer" aria-label="Emulador Ryujinx" title="Emulador Ryujinx"><i class="fas fa-laptop mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc1">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Aventura Épica!</h3>
+                                <p>Descubre el reino de Hyrule como nunca antes en esta obra maestra de Nintendo.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc1">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 2: God of War (2018) -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://static.wikia.nocookie.net/godofwar/images/a/a8/Portada_God_of_War_%282018%29.png/revision/latest?cb=20211008000250&path-prefix=es" class="card-img-top" alt="God of War (2018)">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">God of War (2018)</h5>
+                                    <p class="card-text">Kratos regresa en una emocionante aventura nórdica con su hijo Atreus.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-danger me-1">Acción</span><span class="badge text-bg-secondary me-1">Aventura</span><span class="badge text-bg-dark">Mitología</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/1593500/God_of_War/" target="_blank" rel="noopener noreferrer" aria-label="Obtener God of War en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://store.epicgames.com/en-US/p/god-of-war" target="_blank" rel="noopener noreferrer" aria-label="Obtener God of War en Epic Games" title="Epic Games"><i class="fas fa-gamepad mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc2">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Paternidad y Guerra!</h3>
+                                <p>Una narrativa profunda combinada con un combate brutal y satisfactorio.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc2">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 3: Halo: Infinite -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://store-images.s-microsoft.com/image/apps.21536.13727851868390641.c9cc5f66-aff8-406c-af6b-440838730be0.68796bde-cbf5-4eaa-a299-011417041da6" class="card-img-top" alt="Halo: Infinite">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Halo: Infinite</h5>
+                                    <p class="card-text">El Jefe Maestro regresa en la próxima evolución de la franquicia Halo.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-danger me-1">Shooter</span><span class="badge text-bg-light text-dark me-1">Sci-Fi</span><span class="badge text-bg-info text-dark">Multijugador</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/1240440/Halo_Infinite/" target="_blank" rel="noopener noreferrer" aria-label="Obtener Halo Infinite en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://www.xbox.com/en-US/games/store/halo-infinite/9pglx5vc928s" target="_blank" rel="noopener noreferrer" aria-label="Obtener Halo Infinite en Xbox" title="Xbox"><i class="fab fa-xbox mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc3">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Combate Espacial!</h3>
+                                <p>Experimenta el combate más libre y expansivo de la historia de Halo.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc3">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 4: Super Mario Odyssey (Emulado) -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://cdn.cdkeys.com/700x700/media/catalog/product/s/u/super_mario_odyssey.jpg" class="card-img-top" alt="Super Mario Odyssey">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Super Mario Odyssey</h5>
+                                    <p class="card-text">Mario viaja por el mundo en su odisea más grande y colorida hasta la fecha.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-warning text-dark me-1">Plataformas</span><span class="badge text-bg-primary me-1">Aventura</span><span class="badge text-bg-info text-dark">Familia</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://yuzu-emu.org/" target="_blank" rel="noopener noreferrer" aria-label="Emulador Yuzu" title="Emulador Yuzu"><i class="fas fa-gamepad mx-1"></i></a>
+                                            <a href="https://ryujinx.org/" target="_blank" rel="noopener noreferrer" aria-label="Emulador Ryujinx" title="Emulador Ryujinx"><i class="fas fa-laptop mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc4">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Plataformas Creativas!</h3>
+                                <p>Lanza el sombrero de Cappy para poseer enemigos y objetos en este innovador juego.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc4">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 5: The Last of Us Part II -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fcnnespanol.cnn.com%2Fcnne-underscored%2F2020%2F06%2F19%2Fthe-last-of-us-part-ii-nos-ha-dejado-asombrados-pero-abatidos%2F&psig=AOvVaw0UhlVjxyMB21yTKiMipNfa&ust=1746477211071000&source=images&cd=vfe&opi=89978449&ved=2ahUKEwijpbvf1IqNAxUGMLkGHZv-NzUQjRx6BAgAEBk" class="card-img-top" alt="The Last of Us Part II">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">The Last of Us Part II</h5>
+                                    <p class="card-text">Continúa la emotiva historia de Ellie en un mundo postapocalíptico brutal.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-danger me-1">Acción</span><span class="badge text-bg-warning text-dark me-1">Supervivencia</span><span class="badge text-bg-dark">Drama</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/1888930/The_Last_of_Us_Part_I/" target="_blank" rel="noopener noreferrer" aria-label="Obtener The Last of Us en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://store.epicgames.com/en-US/p/the-last-of-us-part-i" target="_blank" rel="noopener noreferrer" aria-label="Obtener The Last of Us en Epic Games" title="Epic Games"><i class="fas fa-gamepad mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc5">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Narrativa Intensa!</h3>
+                                <p>Una experiencia emocional con un combate táctico y tenso.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc5">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 6: Elden Ring -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://cdn11.bigcommerce.com/s-k0hjo2yyrq/images/stencil/1280x1280/products/1106/863/Elden_Ring_Standard_Edition_Packshot__73901.1726738824.jpg?c=1" class="card-img-top" alt="Elden Ring">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Elden Ring</h5>
+                                    <p class="card-text">Un épico RPG de mundo abierto creado por FromSoftware y George R.R. Martin.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-danger me-1">RPG</span><span class="badge text-bg-dark me-1">Mundo Abierto</span><span class="badge text-bg-warning text-dark">Difícil</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/1245620/ELDEN_RING/" target="_blank" rel="noopener noreferrer" aria-label="Obtener Elden Ring en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://store.epicgames.com/en-US/p/elden-ring" target="_blank" rel="noopener noreferrer" aria-label="Obtener Elden Ring en Epic Games" title="Epic Games"><i class="fas fa-gamepad mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc6">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Desafío Épico!</h3>
+                                <p>Explora las Tierras Intermedias y conviértete en el Señor del Círculo.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc6">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 7: Animal Crossing: New Horizons (Emulado) -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/1/1f/Animal_Crossing_New_Horizons.jpg" class="card-img-top" alt="Animal Crossing: New Horizons">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Animal Crossing: New Horizons</h5>
+                                    <p class="card-text">Crea tu paraíso personal en una isla desierta llena de posibilidades.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-success me-1">Simulación</span><span class="badge text-bg-info text-dark me-1">Relajante</span><span class="badge text-bg-primary">Social</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://yuzu-emu.org/" target="_blank" rel="noopener noreferrer" aria-label="Emulador Yuzu" title="Emulador Yuzu"><i class="fas fa-gamepad mx-1"></i></a>
+                                            <a href="https://ryujinx.org/" target="_blank" rel="noopener noreferrer" aria-label="Emulador Ryujinx" title="Emulador Ryujinx"><i class="fas fa-laptop mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc7">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Vida Virtual!</h3>
+                                <p>Personaliza tu isla, haz amigos animales y relájate en este encantador juego.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc7">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 8: Forza Horizon 5 -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://image.api.playstation.com/vulcan/ap/rnd/202502/1820/74413343c763573c1415ed0a18cbc814241e3e671892e2bf.png" class="card-img-top" alt="Forza Horizon 5">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Forza Horizon 5</h5>
+                                    <p class="card-text">Tu aventura automovilística definitiva te espera en los vibrantes paisajes de México.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-info text-dark me-1">Carreras</span><span class="badge text-bg-primary me-1">Mundo Abierto</span><span class="badge text-bg-warning text-dark">Autos</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/1551360/Forza_Horizon_5/" target="_blank" rel="noopener noreferrer" aria-label="Obtener Forza Horizon 5 en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://www.xbox.com/en-US/games/store/forza-horizon-5/9PNKXGZVQZHK" target="_blank" rel="noopener noreferrer" aria-label="Obtener Forza Horizon 5 en Xbox" title="Xbox"><i class="fab fa-xbox mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc8">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Velocidad y Libertad!</h3>
+                                <p>Cientos de autos y un mundo abierto espectacular te esperan.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc8">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 9: Final Fantasy VII Remake -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://sm.ign.com/ign_es/game/f/final-fant/final-fantasy-vii-remake_ye81.jpg" class="card-img-top" alt="Final Fantasy VII Remake">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Final Fantasy VII Remake</h5>
+                                    <p class="card-text">El clásico RPG reinventado con gráficos modernos y un sistema de combate revolucionario.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-danger me-1">RPG</span><span class="badge text-bg-primary me-1">Acción</span><span class="badge text-bg-info text-dark">Historia</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/1462040/FINAL_FANTASY_VII_REMAKE_INTERGRADE/" target="_blank" rel="noopener noreferrer" aria-label="Obtener FFVII Remake en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://store.epicgames.com/en-US/p/final-fantasy-vii-remake-intergrade" target="_blank" rel="noopener noreferrer" aria-label="Obtener FFVII Remake en Epic Games" title="Epic Games"><i class="fas fa-gamepad mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc9">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Clásico Modernizado!</h3>
+                                <p>Revive la historia de Cloud y sus amigos en Midgar como nunca antes.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc9">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 10: Metroid Dread (Emulado) -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://img.asmedia.epimg.net/resizer/v2/HUWRBBE6DNODJD5FIAWJTWCCBI.jpg?auth=3b6861fd306d87d20600bbc1ae3aca6d99face32d437a54ac97edccae688241f&width=1200&height=1200&smart=true" class="card-img-top" alt="Metroid Dread">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Metroid Dread</h5>
+                                    <p class="card-text">Samus Aran regresa en una aventura de acción en 2D que continúa la saga Metroid.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-danger me-1">Acción</span><span class="badge text-bg-warning text-dark me-1">Plataformas</span><span class="badge text-bg-dark">Exploración</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://yuzu-emu.org/" target="_blank" rel="noopener noreferrer" aria-label="Emulador Yuzu" title="Emulador Yuzu"><i class="fas fa-gamepad mx-1"></i></a>
+                                            <a href="https://ryujinx.org/" target="_blank" rel="noopener noreferrer" aria-label="Emulador Ryujinx" title="Emulador Ryujinx"><i class="fas fa-laptop mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc10">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Caza Alienígena!</h3>
+                                <p>Explora un planeta misterioso mientras evadas a los implacables E.M.M.I.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc10">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- /row -->
+            </section>
+
+            <!-- Mensaje si no hay juegos -->
+            <div id="no-games-message" class="text-center lead mt-5" style="display: none;">
+                <p>😔 Parece que no hay juegos de PC que coincidan con el filtro. 😔</p>
+                <a href="juegos.html" class="btn btn-vortex-secondary mt-3">Ver Todos los Juegos de PC</a>
+            </div>
+
+            <!-- Paginación Oculta -->
+            <nav aria-label="Paginación de juegos" class="mt-5 d-flex justify-content-center" id="pagination-nav" style="display: none;"></nav>
+
+        </div> <!-- /container -->
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="mt-auto py-3" role="contentinfo">
+    <div class="container text-center">
+            <div class="social-icons mb-3">
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visita nuestro Instagram" class="social-icon-link"><i class="bi bi-instagram"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visita nuestro Twitter/X" class="social-icon-link"><i class="bi bi-twitter-x"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visita nuestro Facebook" class="social-icon-link"><i class="bi bi-facebook"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visita nuestro canal de YouTube" class="social-icon-link"><i class="bi bi-youtube"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visita nuestro TikTok" class="social-icon-link"><i class="bi bi-tiktok"></i></a>
+            </div>
+            <p class="mb-1">VORTEX PLAY © <span id="current-year">2024</span></p>
+            <p class="mb-1">Diseño inspirado en la nostalgia pixelada y plataformas modernas.</p>
+            <p class="mb-0 footer-links">
+                <a href="#">Privacidad</a><span class="mx-1" aria-hidden="true">|</span>
+                <a href="#">Términos</a><span class="mx-1" aria-hidden="true">|</span>
+                <a href="#">Cookies</a><span class="mx-1" aria-hidden="true">|</span>
+                <a href="soporte.html">Soporte</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- MODALES PARA LOS JUEGOS DE PC -->
+
+    <!-- Modal PC 1: The Legend of Zelda: Breath of the Wild -->
+    <div class="modal fade" id="gameDetailModal-pc1" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc1">The Legend of Zelda: Breath of the Wild</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Explora el vasto reino de Hyrule como nunca antes en esta aclamada aventura de Nintendo. Con una libertad sin precedentes, puedes escalar montañas, explorar ruinas antiguas y descubrir secretos en cualquier orden que elijas.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://yuzu-emu.org/" target="_blank" rel="noopener noreferrer" title="Emulador Yuzu"><i class="fas fa-gamepad mx-1"></i></a> <a href="https://ryujinx.org/" target="_blank" rel="noopener noreferrer" title="Emulador Ryujinx"><i class="fas fa-laptop mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 2: God of War (2018) -->
+    <div class="modal fade" id="gameDetailModal-pc2" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc2">God of War (2018)</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Kratos, el antiguo dios de la guerra griego, ahora vive como un hombre en el reino de los dioses y monstruos nórdicos. En este mundo hostil debe luchar para sobrevivir y enseñar a su hijo Atreus a hacer lo mismo.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/app/1593500/God_of_War/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://store.epicgames.com/en-US/p/god-of-war" target="_blank" rel="noopener noreferrer" title="Epic Games"><i class="fas fa-gamepad mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 3: Halo: Infinite -->
+    <div class="modal fade" id="gameDetailModal-pc3" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc3" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc3">Halo: Infinite</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Cuando toda esperanza se ha perdido y el destino de la humanidad pende de un hilo, el Jefe Maestro regresa para enfrentarse al enemigo más implacable que jamás haya enfrentado. El anillo Halo está lleno de secretos y peligros.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/app/1240440/Halo_Infinite/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://www.xbox.com/en-US/games/store/halo-infinite/9pglx5vc928s" target="_blank" rel="noopener noreferrer" title="Xbox"><i class="fab fa-xbox mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 4: Super Mario Odyssey -->
+    <div class="modal fade" id="gameDetailModal-pc4" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc4" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc4">Super Mario Odyssey</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Únete a Mario en una enorme aventura en 3D por todo el mundo usando sus nuevas habilidades para recolectar Lunas y rescatar a la Princesa Peach de Bowser. ¡Lanza el sombrero de Cappy para poseer objetos y personajes!</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://yuzu-emu.org/" target="_blank" rel="noopener noreferrer" title="Emulador Yuzu"><i class="fas fa-gamepad mx-1"></i></a> <a href="https://ryujinx.org/" target="_blank" rel="noopener noreferrer" title="Emulador Ryujinx"><i class="fas fa-laptop mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 5: The Last of Us Part II -->
+    <div class="modal fade" id="gameDetailModal-pc5" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc5" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc5">The Last of Us Part II</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Cinco años después de su peligroso viaje a través de los Estados Unidos post-pandémicos, Ellie y Joel se han establecido en Jackson, Wyoming. Cuando un evento violento interrumpe esa paz, Ellie se embarca en un viaje implacable.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/app/1888930/The_Last_of_Us_Part_I/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://store.epicgames.com/en-US/p/the-last-of-us-part-i" target="_blank" rel="noopener noreferrer" title="Epic Games"><i class="fas fa-gamepad mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 6: Elden Ring -->
+    <div class="modal fade" id="gameDetailModal-pc6" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc6" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc6">Elden Ring</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Un nuevo mundo de fantasía creado por Hidetaka Miyazaki y George R.R. Martin. Levanta, Sinluz, y que la gracia te guíe para abrazar el poder del Círculo de Elden y convertirte en un Señor del Círculo en las Tierras Intermedias.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/app/1245620/ELDEN_RING/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://store.epicgames.com/en-US/p/elden-ring" target="_blank" rel="noopener noreferrer" title="Epic Games"><i class="fas fa-gamepad mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 7: Animal Crossing: New Horizons -->
+    <div class="modal fade" id="gameDetailModal-pc7" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc7" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc7">Animal Crossing: New Horizons</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Escapa a una isla desierta y crea tu propio paraíso mientras personalizas tu hogar, decoras la isla (incluyendo terrenos y caminos) y te haces amigo de los nuevos y encantadores residentes.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://yuzu-emu.org/" target="_blank" rel="noopener noreferrer" title="Emulador Yuzu"><i class="fas fa-gamepad mx-1"></i></a> <a href="https://ryujinx.org/" target="_blank" rel="noopener noreferrer" title="Emulador Ryujinx"><i class="fas fa-laptop mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 8: Forza Horizon 5 -->
+    <div class="modal fade" id="gameDetailModal-pc8" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc8" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc8">Forza Horizon 5</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Tu aventura automovilística definitiva te espera. Explora los vibrantes paisajes de mundo abierto de México con una acción de conducción ilimitada y divertida en cientos de los mejores autos del mundo.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/app/1551360/Forza_Horizon_5/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://www.xbox.com/en-US/games/store/forza-horizon-5/9PNKXGZVQZHK" target="_blank" rel="noopener noreferrer" title="Xbox"><i class="fab fa-xbox mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 9: Final Fantasy VII Remake -->
+    <div class="modal fade" id="gameDetailModal-pc9" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc9" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc9">Final Fantasy VII Remake</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>El clásico de 1997 vuelve completamente reinventado con tecnología de punta, narrativa expandida y un sistema de combate revolucionario que fusiona acción en tiempo real con elementos de estrategia clásicos.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/app/1462040/FINAL_FANTASY_VII_REMAKE_INTERGRADE/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://store.epicgames.com/en-US/p/final-fantasy-vii-remake-intergrade" target="_blank" rel="noopener noreferrer" title="Epic Games"><i class="fas fa-gamepad mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 10: Metroid Dread -->
+    <div class="modal fade" id="gameDetailModal-pc10" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc10" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc10">Metroid Dread</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Samus Aran regresa en una nueva aventura de acción lateral que continúa la historia después de los eventos de Metroid Fusion. Explora el planeta ZDR mientras evades a los implacables E.M.M.I., robots diseñados para cazar y destruir.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://yuzu-emu.org/" target="_blank" rel="noopener noreferrer" title="Emulador Yuzu"><i class="fas fa-gamepad mx-1"></i></a> <a href="https://ryujinx.org/" target="_blank" rel="noopener noreferrer" title="Emulador Ryujinx"><i class="fas fa-laptop mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+
+    <!-- FIN DE LOS MODALES -->
+
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!-- Script del año -->
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
+    <!-- SCRIPT DE FILTRADO -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const categoriaFiltrar = params.get('categoria');
+            const todasLasColumnas = document.querySelectorAll('#juegos-pc .game-card-col');
+            const infoFiltro = document.getElementById('filter-info');
+            const mensajeSinJuegos = document.getElementById('no-games-message');
+            const paginacion = document.getElementById('pagination-nav');
+            const seccionPC = document.getElementById('juegos-pc');
+            let totalJuegosVisibles = 0;
+
+            if (categoriaFiltrar) {
+                const nombreCategoriaMostrado = categoriaFiltrar.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+                infoFiltro.innerHTML = `Mostrando juegos de PC de la categoría: <strong>${nombreCategoriaMostrado}</strong> &nbsp; <a href="juegos.html" class="badge bg-secondary text-decoration-none">Ver todos</a>`;
+                infoFiltro.style.display = 'block';
+                if (paginacion) paginacion.style.display = 'none';
+
+                todasLasColumnas.forEach(columna => {
+                    const categoriasTarjeta = columna.dataset.categoria ? columna.dataset.categoria.split(' ') : [];
+                    if (categoriasTarjeta.includes(categoriaFiltrar)) {
+                        columna.style.display = '';
+                        totalJuegosVisibles++;
+                    } else {
+                        columna.style.display = 'none';
+                    }
+                });
+
+                if (seccionPC) {
+                    seccionPC.style.display = totalJuegosVisibles === 0 ? 'none' : '';
+                }
+                mensajeSinJuegos.style.display = totalJuegosVisibles === 0 ? 'block' : 'none';
+
+            } else {
+                todasLasColumnas.forEach(columna => { columna.style.display = ''; });
+                if (seccionPC) seccionPC.style.display = '';
+                infoFiltro.style.display = 'none';
+                mensajeSinJuegos.style.display = 'none';
+                if (paginacion) paginacion.style.display = 'none';
+            }
+        });
+    </script>
+    <!-- FIN SCRIPT FILTRADO -->
+
+</body>
+</html>
