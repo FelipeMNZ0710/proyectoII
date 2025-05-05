@@ -1,0 +1,472 @@
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explora la colección de juegos de móviles disponibles en Vortex Play.">
+    <title>Vortex Play - Juegos de Móviles</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;family=Roboto:wght@400;700&amp;display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome para Iconos de Plataforma -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Estilo personalizado -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/marca/marca_pagina.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="assets/marca/marca_pagina.png" sizes="32x32">
+
+    <!-- Estilos CSS para vista de escritorio -->
+    <style>
+        /* Ajustes generales para pantallas grandes */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1400px;
+            }
+
+            .game-card-col .content-card {
+                min-height: 500px;
+                transition: transform 0.3s ease;
+            }
+
+            .game-card-col .content-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .card-img-top {
+                height: 200px;
+                object-fit: contain;
+                padding: 15px;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+                margin-bottom: 3rem !important;
+            }
+
+            .platform-links {
+                padding-top: 1.5rem;
+            }
+
+            .platform-links a {
+                font-size: 1.5rem;
+                margin: 0 5px;
+            }
+
+            .btn-vortex {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+
+            /* Ajuste del grid para pantallas grandes */
+            .row-cols-xxl-5 {
+                column-count: 5;
+            }
+        }
+
+        /* Estilos base para todas las pantallas */
+        .game-card-col .content-card {
+            min-height: 480px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .game-card-col .content-card .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card-col .content-card .platform-links {
+            margin-top: auto;
+            padding-top: 1rem;
+        }
+
+        .game-card-col .content-card .card-body>button.btn-vortex {
+            margin-top: 1rem;
+        }
+
+        .section-title {
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .btn-vortex {
+            background-color: #6c5ce7;
+            color: white;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .btn-vortex:hover {
+            background-color: #5649c0;
+            color: white;
+        }
+
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" style="background-color: #2d3436;">
+        <div class="container">
+            <a class="navbar-brand d-inline-flex align-items-center" href="index.html">
+                <img src="assets/marca/marca_pagina.png" alt="Logo de Vortex Play" height="30" class="me-2">
+                VORTEX PLAY
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vista1.html">Juegos PC</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vista2.html">Juegos Consola</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="vista3.html">Juegos Mobile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vista4.html">Soporte</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main role="main" class="mt-5 pt-4">
+        <div class="container pt-4">
+            <h1 id="games-title" class="section-title text-center mb-5">++ JUEGOS DE MÓVILES ++</h1>
+            <div id="filter-info" class="text-center text-muted mb-4" style="display: none;"></div>
+
+            <section id="juegos-moviles" class="platform-section mb-5">
+                <!-- Cambiado a row-cols-xxl-5 para pantallas muy grandes -->
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xxl-5 g-4">
+                    <!-- Juego Móvil 1: Free Fire -->
+                    <div class="col game-card-col" data-categoria="accion battle-royale">
+                        <div class="content-card h-100" tabindex="0">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <img src="https://play-lh.googleusercontent.com/6llpraFcTI0rEUuRpWEG9NWWblvm106y5JXcDzu60ACuaUYDD3i70a-p9_QM65NsGDE"
+                                        class="card-img-top" alt="Free Fire">
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title">Free Fire</h5>
+                                        <p class="card-text">Juego de batalla real en el que hasta 50 jugadores
+                                            luchan para ser el
+                                            último en pie en una isla remota.</p>
+                                        <p class="card-text">
+                                            <span class="badge text-bg-danger me-1">Acción</span>
+                                            <span class="badge text-bg-warning text-dark">Battle Royale</span>
+                                        </p>
+                                        <div class="platform-links">
+                                            <h6 class="platform-title">Consíguelo en:</h6>
+                                            <div>
+                                                <a href="https://play.google.com/store/apps/details?id=com.dts.freefireth"
+                                                    target="_blank" rel="noopener noreferrer"
+                                                    aria-label="Descargar Free Fire en Google Play"
+                                                    title="Google Play"><i class="fab fa-google-play mx-1"></i></a>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal"
+                                            data-bs-target="#gameDetailModal-freefire">Ver Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <h3>¡Sé el último en pie!</h3>
+                                    <p>Lucha por la supervivencia en una isla remota.</p>
+                                    <button type="button" class="btn btn-vortex" data-bs-toggle="modal"
+                                        data-bs-target="#gameDetailModal-freefire">Más Detalles</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Juego Móvil 2: Geometry Dash -->
+                    <div class="col game-card-col" data-categoria="plataformas musica">
+                        <div class="content-card h-100" tabindex="0">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <img src="https://static.wikia.nocookie.net/logopedia/images/4/41/Geometry_Dash_Icon.svg/revision/latest?cb=20231227153428&path-prefix=es"
+                                        class="card-img-top" alt="Geometry Dash">
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title">Geometry Dash</h5>
+                                        <p class="card-text">Juego de plataformas donde debes saltar y esquivar
+                                            obstáculos al ritmo
+                                            de la música.</p>
+                                        <p class="card-text">
+                                            <span class="badge text-bg-primary me-1">Plataformas</span>
+                                            <span class="badge text-bg-info text-dark">Música</span>
+                                        </p>
+                                        <div class="platform-links">
+                                            <h6 class="platform-title">Consíguelo en:</h6>
+                                            <div>
+                                                <a href="https://play.google.com/store/apps/details?id=com.robtopx.geometryjump"
+                                                    target="_blank" rel="noopener noreferrer"
+                                                    aria-label="Descargar Geometry Dash en Google Play"
+                                                    title="Google Play"><i class="fab fa-google-play mx-1"></i></a>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal"
+                                            data-bs-target="#gameDetailModal-geometrydash">Ver Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <h3>¡Salta al ritmo!</h3>
+                                    <p>Esquiva obstáculos y sigue el ritmo de la música.</p>
+                                    <button type="button" class="btn btn-vortex" data-bs-toggle="modal"
+                                        data-bs-target="#gameDetailModal-geometrydash">Más Detalles</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Juego Móvil 3: Plants vs Zombies 2 -->
+                    <div class="col game-card-col" data-categoria="estrategia defensa-de-torre">
+                        <div class="content-card h-100" tabindex="0">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <img src="https://static.wikia.nocookie.net/plantsvszombies/images/6/60/Plants_Vs._Zombies%E2%84%A2_2_It%27s_About_Time_Square_Icon_%28Versions_1.0_to_1.4%29.png/revision/latest?cb=20151023011732"
+                                        class="card-img-top" alt="Plants vs Zombies 2">
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title">Plants vs Zombies 2</h5>
+                                        <p class="card-text">Defiende tu jardín de hordas de zombis usando
+                                            plantas con habilidades
+                                            especiales.</p>
+                                        <p class="card-text">
+                                            <span class="badge text-bg-success me-1">Estrategia</span>
+                                            <span class="badge text-bg-info text-dark">Defensa de Torre</span>
+                                        </p>
+                                        <div class="platform-links">
+                                            <h6 class="platform-title">Consíguelo en:</h6>
+                                            <div>
+                                                <a href="https://play.google.com/store/apps/details?id=com.ea.game.pvz2_row"
+                                                    target="_blank" rel="noopener noreferrer"
+                                                    aria-label="Descargar Plants vs Zombies 2 en Google Play"
+                                                    title="Google Play"><i class="fab fa-google-play mx-1"></i></a>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal"
+                                            data-bs-target="#gameDetailModal-pvz2">Ver
+                                            Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <h3>¡Plantas vs Zombis!</h3>
+                                    <p>Defiende tu jardín con plantas y habilidades especiales.</p>
+                                    <button type="button" class="btn btn-vortex" data-bs-toggle="modal"
+                                        data-bs-target="#gameDetailModal-pvz2">Más Detalles</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Juego Móvil 4: Call of Duty -->
+                    <div class="col game-card-col" data-categoria="accion shooter">
+                        <div class="content-card h-100" tabindex="0">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <img src="https://play-lh.googleusercontent.com/AtGuphTcfffarHBaw2mn4PHZh6SxSUjbZbSDuL0s_8apx--rXrtu3TNIs43O2_oZCQ"
+                                        class="card-img-top" alt="Call of Duty">
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title">Call of Duty</h5>
+                                        <p class="card-text">Popular franquicia de disparos en primera persona
+                                            con modos de campaña,
+                                            multijugador y battle royale.</p>
+                                        <p class="card-text">
+                                            <span class="badge text-bg-danger me-1">Acción</span>
+                                            <span class="badge text-bg-info text-dark">Shooter</span>
+                                        </p>
+                                        <div class="platform-links">
+                                            <h6 class="platform-title">Consíguelo en:</h6>
+                                            <div>
+                                                <a href="https://play.google.com/store/apps/details?id=com.activision.callofduty.shooter"
+                                                    target="_blank" rel="noopener noreferrer"
+                                                    aria-label="Descargar Call of Duty en Google Play"
+                                                    title="Google Play"><i class="fab fa-google-play mx-1"></i></a>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal"
+                                            data-bs-target="#gameDetailModal-callofduty">Ver Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <h3>¡Acción en primera persona!</h3>
+                                    <p>Disfruta de modos de campaña, multijugador y battle royale.</p>
+                                    <button type="button" class="btn btn-vortex" data-bs-toggle="modal"
+                                        data-bs-target="#gameDetailModal-callofduty">Más Detalles</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Juego Móvil 5: Plato -->
+                    <div class="col game-card-col" data-categoria="multijugador clasicos">
+                        <div class="content-card h-100" tabindex="0">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <img src="https://play-lh.googleusercontent.com/CIJTelCH4XzbjhkqCYhwN39e6JDT7u0AZZGX12m7dpLLqrMXk01qrjbzYXnrK6ID0OU"
+                                        class="card-img-top" alt="Plato">
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title">Plato</h5>
+                                        <p class="card-text">Aplicación que reúne múltiples juegos clásicos como
+                                            ajedrez, parchís y
+                                            dominó para jugar online con amigos.</p>
+                                        <p class="card-text">
+                                            <span class="badge text-bg-success me-1">Multijugador</span>
+                                            <span class="badge text-bg-info text-dark">Clásicos</span>
+                                        </p>
+                                        <div class="platform-links">
+                                            <h6 class="platform-title">Consíguelo en:</h6>
+                                            <div>
+                                                <a href="https://play.google.com/store/apps/details?id=com.plato.android"
+                                                    target="_blank" rel="noopener noreferrer"
+                                                    aria-label="Descargar Plato en Google Play" title="Google Play"><i
+                                                        class="fab fa-google-play mx-1"></i></a>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal"
+                                            data-bs-target="#gameDetailModal-plato">Ver
+                                            Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <h3>¡Juegos clásicos online!</h3>
+                                    <p>Juega ajedrez, parchís, dominó y más con tus amigos.</p>
+                                    <button type="button" class="btn btn-vortex" data-bs-toggle="modal"
+                                        data-bs-target="#gameDetailModal-plato">Más Detalles</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Juego Móvil 6: Clash Royale -->
+                    <div class="col game-card-col" data-categoria="estrategia tiempo-real">
+                        <div class="content-card h-100" tabindex="0">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <img src="https://play-lh.googleusercontent.com/gnSC6s8-6Tjc4uhvDW7nfrSJxpbhllzYhgX8y374N1LYvWBStn2YhozS9XXaz1T_Pi2q"
+                                        class="card-img-top" alt="Clash Royale">
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title">Clash Royale</h5>
+                                        <p class="card-text">Juego de estrategia en tiempo real donde usas
+                                            cartas para destruir las
+                                            torres del enemigo.</p>
+                                        <p class="card-text">
+                                            <span class="badge text-bg-success me-1">Estrategia</span>
+                                            <span class="badge text-bg-info text-dark">Tiempo Real</span>
+                                        </p>
+                                        <div class="platform-links">
+                                            <h6 class="platform-title">Consíguelo en:</h6>
+                                            <div>
+                                                <a href="https://play.google.com/store/apps/details?id=com.supercell.clashroyale"
+                                                    target="_blank" rel="noopener noreferrer"
+                                                    aria-label="Descargar Clash Royale en Google Play"
+                                                    title="Google Play"><i class="fab fa-google-play mx-1"></i></a>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal"
+                                            data-bs-target="#gameDetailModal-clashroyale">Ver Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <h3>¡Destruye las torres!</h3>
+                                    <p>Usa cartas y estrategia en tiempo real para vencer a tus oponentes.</p>
+                                    <button type="button" class="btn btn-vortex" data-bs-toggle="modal"
+                                        data-bs-target="#gameDetailModal-clashroyale">Más Detalles</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Juego Móvil 7: Brawl Stars -->
+                    <div class="col game-card-col" data-categoria="shooter multijugador">
+                        <div class="content-card h-100" tabindex="0">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <img src="https://play-lh.googleusercontent.com/UDvJF8oLGUgWWnZ3jzYPLAVfIzM5oY62_EhDQ6lKvOPDzZ3nFfHe6GKmYjr-DkWWGaA"
+                                        class="card-img-top" alt="Brawl Stars">
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title">Brawl Stars</h5>
+                                        <p class="card-text">Shooter multijugador en el que luchas en distintos
+                                            modos de juego
+                                            rápidos con personajes únicos.</p>
+                                        <p class="card-text">
+                                            <span class="badge text-bg-danger me-1">Shooter</span>
+                                            <span class="badge text-bg-info text-dark">Multijugador</span>
+                                        </p>
+                                        <div class="platform-links">
+                                            <h6 class="platform-title">Consíguelo en:</h6>
+                                            <div>
+                                                <a href="https://play.google.com/store/apps/details?id=com.supercell.brawlstars"
+                                                    target="_blank" rel="noopener noreferrer"
+                                                    aria-label="Descargar Brawl Stars en Google Play"
+                                                    title="Google Play"><i class="fab fa-google-play mx-1"></i></a>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal"
+                                            data-bs-target="#gameDetailModal-brawlstars">Ver Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <h3>¡Lucha con estilo!</h3>
+                                    <p>Participa en modos de juego rápidos con personajes únicos.</p>
+                                    <button type="button" class="btn btn-vortex" data-bs-toggle="modal"
+                                        data-bs-target="#gameDetailModal-brawlstars">Más Detalles</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Juego Móvil 8: 4 Fotos 1 Palabra -->
+                    <div class="col game-card-col" data-categoria="puzzle acertijos">
+                        <div class="content-card h-100" tabindex="0">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <img src="https://play-lh.googleusercontent.com/bVaiDMVjhL_FQLV4GR4La0S9ObswwNU6mV2Mv51wmZahDSQHQSvHiQlJD-WPxztLe-c"
+                                        class="card-img-top" alt="4 Fotos 1 Palabra">
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title">4 Fotos 1 Palabra</h5>
+                                        <p class="card-text">Juego de acertijos donde debes adivinar la palabra
+                                            que relaciona cuatro
+                                            imágenes mostradas.</p>
+                                        <p class="card-text">
+                                            <span class="badge text-bg-success me-1">Puzzle</span>
+                                            <span class="badge text-bg-info text-dark">Acertijos</span>
+                                        </p>
+                                        <div class="platform-links">
+                                            <h6 class="platform-title">Consíguelo en:</h6>
+                                            <div>
+                                                <a href="https://play.google.com/store/apps/details?id=com.davidm.fourpicturesoneword"
+                                                    target="_blank" rel="noopener noreferrer"
+                                                    aria-label="Descargar 4 Fotos 1 Palabra en Google Play"
+                                                    title="Google Play"><i class="fab fa-google-play mx-1"></i></a>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal"
+                                            data-bs-target="#gameDetailModal-4fotos1palabra">Ver
+                                            Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <h3>¡Adivina la palabra!</h3>
+                                    <p>Encuentra la palabra que conecta cuatro imágenes.</p>
+                                    <button type="button" class="btn btn-vortex" data-bs-toggle="modal"
+                                        data-bs-target="#gameDetailModal-4fotos1palabra">Más Detalles</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Juego Móvil 9: Among Us -->
+                    <div class="col game-card-col" data-categoria="multijugador deduccion">|
