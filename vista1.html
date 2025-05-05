@@ -1,13 +1,933 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consola</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="description" content="Explora la colección de juegos de PC disponibles en Vortex Play.">
+    <title>Vortex Play - Juegos de PC</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome para Iconos de Plataforma -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Estilo personalizado -->
+    <link rel="stylesheet" href="assets/css/style.css"> <!-- Asumiendo que tienes un style.css -->
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/marca/marca_pagina.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="assets/marca/marca_pagina.png" sizes="32x32">
+
+    <!-- Estilos CSS para altura mínima de tarjetas -->
+    <style>
+        .game-card-col .content-card {
+            min-height: 530px; /* Ajusta este valor si es necesario */
+        }
+        .game-card-col .content-card .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .game-card-col .content-card .platform-links {
+            margin-top: auto;
+            padding-top: 1rem;
+        }
+        .game-card-col .content-card .card-body > button.btn-vortex {
+            margin-top: 1rem;
+        }
+    </style>
+
 </head>
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation">
+        <div class="container">
+            <a class="navbar-brand d-inline-flex align-items-center" href="index.html">
+                <img src="assets/img/marca_pagina.png" alt="Logo de Vortex Play" height="30" class="me-2">
+                VORTEX PLAY
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-itgrasasem"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="vista1.html">Juegos pc</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vista2.html">Juegos Consola</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vista3.html">Juegos Mobile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vista4.html">Soporte</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main role="main" class="mt-4">
+        <div class="container pt-4">
+
+            <h1 id="games-title" class="section-title text-center mb-5">++ JUEGOS DE PC ++</h1>
+            <div id="filter-info" class="text-center text-muted mb-4" style="display: none;"></div>
+
+            <section id="juegos-pc" class="platform-section mb-5">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+
+                <!-- Juego PC 1: Call of Duty Cold War -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://image.api.playstation.com/vulcan/ap/rnd/202112/0618/epqD0ZAsuCMkSYVBRMUp5bYk.jpg" class="card-img-top" alt="Call of Duty Cold War">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Call of Duty: Black Ops Cold War</h5>
+                                    <p class="card-text">Sumérgete en la volátil batalla geopolítica de la Guerra Fría.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-danger me-1">Shooter</span><span class="badge text-bg-primary me-1">Acción</span><span class="badge text-bg-info text-dark">Multijugador</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/1985810/Call_of_Duty_Black_Ops_Cold_War/" target="_blank" rel="noopener noreferrer" aria-label="Obtener CoD Cold War en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://store.playstation.com/en-us/product/UP0002-CUSA15010_00-CODCWSTANDARD001" target="_blank" rel="noopener noreferrer" aria-label="Obtener CoD Cold War en Playstation Store" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc1">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Espionaje y Combate!</h3>
+                                <p>Campaña histórica, multijugador y modo Zombis te esperan.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc1">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 2: Call of Duty Black Ops III -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://i.blogs.es/e7dc03/blob/original.webp" class="card-img-top" alt="Call of Duty Black Ops III">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Call of Duty: Black Ops III</h5>
+                                    <p class="card-text">Un futuro oscuro donde emergen soldados Black Ops mejorados.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-danger me-1">Shooter</span><span class="badge text-bg-light text-dark me-1">Sci-Fi</span><span class="badge text-bg-info text-dark">Multijugador</span><span class="badge text-bg-dark">Zombies</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/311210/Call_of_Duty_Black_Ops_III/" target="_blank" rel="noopener noreferrer" aria-label="Obtener CoD BO III en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://www.xbox.com/es-ar/games/store/call-of-duty-black-ops-iii/c3q2wwjj2t1h" target="_blank" rel="noopener noreferrer" aria-label="Obtener CoD BO III en Xbox Store" title="Xbox Store"><i class="fab fa-xbox mx-1"></i></a>
+                                            <a href="https://store.playstation.com/en-us/product/UP0002-CUSA02290_00-CODBO3ZOMBIESEDN" target="_blank" rel="noopener noreferrer" aria-label="Obtener CoD BO III en Playstation Store" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc2">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Soldados del Futuro!</h3>
+                                <p>Combina campaña, multijugador y la icónica experiencia Zombis.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc2">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 3: Call of Duty WWII -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://static.wikia.nocookie.net/cod/images/3/36/Codww2.jpg/revision/latest?cb=20190318214417&path-prefix=es" class="card-img-top" alt="Call of Duty WWII">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Call of Duty: WWII</h5>
+                                    <p class="card-text">Regresa a las raíces de la franquicia en la Segunda Guerra Mundial.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-danger me-1">Shooter</span><span class="badge text-bg-secondary me-1">Histórico</span><span class="badge text-bg-info text-dark">Multijugador</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/476600/Call_of_Duty_WWII/" target="_blank" rel="noopener noreferrer" aria-label="Obtener CoD WWII en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://www.xbox.com/es-ar/games/store/call-of-duty-wwii/bv0nsd4nn4v4" target="_blank" rel="noopener noreferrer" aria-label="Obtener CoD WWII en Xbox Store" title="Xbox Store"><i class="fab fa-xbox mx-1"></i></a>
+                                            <a href="https://store.playstation.com/en-us/product/UP0002-CUSA05969_00-CODWWIIGOLDED001" target="_blank" rel="noopener noreferrer" aria-label="Obtener CoD WWII en Playstation Store" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc3">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Combate Clásico!</h3>
+                                <p>Experimenta el Desembarco de Normandía y batallas icónicas de Europa.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc3">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 4: Dead Rising 2 -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://www.deadrising.com/en/images/product_deadrising2_thumb.jpg" class="card-img-top" alt="Dead Rising 2">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Dead Rising 2</h5>
+                                    <p class="card-text">Sobrevive al apocalipsis zombi en Fortune City creando armas.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-danger me-1">Acción</span><span class="badge text-bg-dark me-1">Zombies</span><span class="badge text-bg-warning text-dark">Supervivencia</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/45740/Dead_Rising_2/" target="_blank" rel="noopener noreferrer" aria-label="Obtener Dead Rising 2 en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://store.playstation.com/en-us/product/UP0102-CUSA04313_00-DEADRISING002PS4" target="_blank" rel="noopener noreferrer" aria-label="Obtener Dead Rising 2 en Playstation Store" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc4">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Masacre Creativa!</h3>
+                                <p>Combina objetos cotidianos para crear armas devastadoras contra hordas.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc4">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 5: Dead Rising 3 -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://images.g2a.com/470x276/1x1x0/dead-rising-3-apocalypse-edition-steam-key-global-i10000003891007/598d892e5bafe35b8d404ef2" class="card-img-top" alt="Dead Rising 3">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Dead Rising 3 Apocalypse Edition</h5>
+                                    <p class="card-text">Explora la ciudad de Los Perdidos infestada de zombis.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-danger me-1">Acción</span><span class="badge text-bg-dark me-1">Zombies</span><span class="badge text-bg-secondary">Mundo Abierto</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/265550/Dead_Rising_3_Apocalypse_Edition/" target="_blank" rel="noopener noreferrer" aria-label="Obtener Dead Rising 3 en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc5">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Caos Zombi Total!</h3>
+                                <p>Más armas, más vehículos y más zombis que nunca en un mundo abierto.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc5">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 6: Doom (2016) -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://static.wikia.nocookie.net/doblaje/images/b/b7/Doom2016cover.png/revision/latest?cb=20200320000157&path-prefix=es" class="card-img-top" alt="Doom (2016)">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">DOOM (2016)</h5>
+                                    <p class="card-text">El brutal y desafiante renacimiento del clásico shooter.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-danger me-1">Shooter</span><span class="badge text-bg-primary me-1">Acción</span><span class="badge text-bg-light text-dark">Sci-Fi</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/379720/DOOM/" target="_blank" rel="noopener noreferrer" aria-label="Obtener DOOM (2016) en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://store.playstation.com/en-us/product/UP1003-CUSA02085_00-DOOMNORTHAMERICA" target="_blank" rel="noopener noreferrer" aria-label="Obtener DOOM (2016) en Playstation Store" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc6">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Rip and Tear!</h3>
+                                <p>Combate rápido, fluido y visceral contra hordas de demonios del infierno.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc6">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 7: UNCHARTED: Colección Legado de ladrones -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://image.api.playstation.com/vulcan/ap/rnd/202111/2000/B3Xbu6aW10scvc4SE7yXA1lZ.png" class="card-img-top" alt="UNCHARTED: Colección Legado de ladrones">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">UNCHARTED™: Colección Legado de ladrones</h5>
+                                    <p class="card-text">Vive las aventuras de Nathan Drake y Chloe Frazer en PC.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-danger me-1">Acción</span><span class="badge text-bg-secondary me-1">Aventura</span><span class="badge text-bg-success">Exploración</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/1659420/UNCHARTED_Legacy_of_Thieves_Collection/" target="_blank" rel="noopener noreferrer" aria-label="Obtener Uncharted Collection en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://store.playstation.com/en-us/product/UP9000-CUSA00341_00-U4UTLLBUNDLE0000" target="_blank" rel="noopener noreferrer" aria-label="Obtener Uncharted Collection en Playstation Store" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc7">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Busca tu Fortuna!</h3>
+                                <p>Incluye UNCHARTED 4: El Desenlace del Ladrón y UNCHARTED: El Legado Perdido.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc7">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 8: Mortal Kombat X -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://static.wikia.nocookie.net/doblaje/images/b/bb/Mortal_Kombat_X.png/revision/latest?cb=20200603225348&path-prefix=es" class="card-img-top" alt="Mortal Kombat X">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Mortal Kombat X</h5>
+                                    <p class="card-text">Combate brutal y cinemático con nuevos y clásicos luchadores.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-warning text-dark me-1">Lucha</span><span class="badge text-bg-danger">Acción</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/307780/Mortal_Kombat_X/" target="_blank" rel="noopener noreferrer" aria-label="Obtener Mortal Kombat X en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://www.xbox.com/es-ar/games/store/mortal-kombat-xl/c20209h1d7lz" target="_blank" rel="noopener noreferrer" aria-label="Obtener Mortal Kombat X en Xbox Store" title="Xbox Store"><i class="fab fa-xbox mx-1"></i></a>
+                                            <a href="https://store.playstation.com/en-us/product/UP1018-CUSA03589_00-MORTALKOMBATXL00" target="_blank" rel="noopener noreferrer" aria-label="Obtener Mortal Kombat X en Playstation Store" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc8">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Finish Him!</h3>
+                                <p>Experimenta los fatalities más sangrientos y las nuevas variaciones de personajes.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc8">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 9: Mortal Kombat 11 -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://static.wikia.nocookie.net/doblaje/images/7/70/Mortal_Kombat_11.jpeg/revision/latest?cb=20190208200355&path-prefix=es" class="card-img-top" alt="Mortal Kombat 11">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Mortal Kombat 11</h5>
+                                    <p class="card-text">La épica saga continúa con más personalización y gore.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-warning text-dark me-1">Lucha</span><span class="badge text-bg-danger">Acción</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/976310/Mortal_Kombat_11/" target="_blank" rel="noopener noreferrer" aria-label="Obtener Mortal Kombat 11 en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://www.xbox.com/es-ar/games/store/mortal-kombat-11/btc0l0bw6lwc" target="_blank" rel="noopener noreferrer" aria-label="Obtener Mortal Kombat 11 en Xbox Store" title="Xbox Store"><i class="fab fa-xbox mx-1"></i></a>
+                                            <a href="https://store.playstation.com/en-us/product/UP1018-PPSA01617_00-00MORTALKOMBAT11" target="_blank" rel="noopener noreferrer" aria-label="Obtener Mortal Kombat 11 en Playstation Store" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc9">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Más Brutal!</h3>
+                                <p>Nuevas mecánicas de combate, personajes y una historia que desafía el tiempo.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc9">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 10: Left 4 Dead 2 -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://acdn-us.mitiendanube.com/stores/004/491/480/products/diseno-sin-titulo-2023-11-15t114029-251-78c648df4efe066e6417223103448639-1024-1024.webp" class="card-img-top" alt="Left 4 Dead 2">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Left 4 Dead 2</h5>
+                                    <p class="card-text">Shooter cooperativo de zombis aclamado por la crítica.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-danger me-1">Shooter</span><span class="badge text-bg-dark me-1">Zombies</span><span class="badge text-bg-success">Cooperativo</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/550/Left_4_Dead_2/" target="_blank" rel="noopener noreferrer" aria-label="Obtener Left 4 Dead 2 en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc10">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Sobrevivid Juntos!</h3>
+                                <p>Enfréntate a hordas de infectados con amigos en diversas campañas.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc10">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 11: Lego Marvel Super Heroes -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://image.api.playstation.com/cdn/UP1018/CUSA00251_00/7YrRqN2wgRzpzX4K5RLUEecDyu53mz8U.png" class="card-img-top" alt="Lego Marvel Super Heroes">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Lego Marvel Super Heroes</h5>
+                                    <p class="card-text">Controla a tus héroes Marvel favoritos en versión LEGO.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-primary me-1">Acción</span><span class="badge text-bg-secondary me-1">Aventura</span><span class="badge text-bg-info text-dark">LEGO</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/249130/LEGO_Marvel_Super_Heroes/" target="_blank" rel="noopener noreferrer" aria-label="Obtener Lego Marvel SH en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://store.playstation.com/en-us/product/UP1018-CUSA00083_00-LEGOMARVEL000000" target="_blank" rel="noopener noreferrer" aria-label="Obtener Lego Marvel SH en Playstation Store" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc11">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Vengadores Unidos!</h3>
+                                <p>Explora Nueva York y más allá en una historia original y divertida.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc11">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 12: Lego Marvel Super Heroes 2 -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://images.steamusercontent.com/ugc/940559103096665021/611581725C5CEA6CE55988C80020AD1DC0849BC0/?imw=512&imh=512&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true" class="card-img-top" alt="Lego Marvel Super Heroes 2">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Lego Marvel Super Heroes 2</h5>
+                                    <p class="card-text">Viaja por el tiempo y el espacio con héroes y villanos Marvel.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-primary me-1">Acción</span><span class="badge text-bg-secondary me-1">Aventura</span><span class="badge text-bg-info text-dark">LEGO</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/647830/LEGO_Marvel_Super_Heroes_2/" target="_blank" rel="noopener noreferrer" aria-label="Obtener Lego Marvel SH 2 en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://store.playstation.com/en-us/product/UP1018-CUSA08469_00-LEGOMARVELSH2001" target="_blank" rel="noopener noreferrer" aria-label="Obtener Lego Marvel SH 2 en Playstation Store" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc12">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Kang el Conquistador!</h3>
+                                <p>Lucha contra Kang en Chronopolis, un mundo abierto que fusiona eras y realidades.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc12">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 13: Mafia Trilogy -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://image.api.playstation.com/vulcan/ap/rnd/202009/0902/7CAOfTFXzgypO4TWHnWtQstC.png" class="card-img-top" alt="Mafia Trilogy">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Mafia: Trilogy</h5>
+                                    <p class="card-text">Vive la vida del crimen organizado en tres eras distintas.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-danger me-1">Acción</span><span class="badge text-bg-secondary me-1">Aventura</span><span class="badge text-bg-dark">Crimen</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/bundle/48195/Mafia_Trilogy/" target="_blank" rel="noopener noreferrer" aria-label="Obtener Mafia Trilogy en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://www.xbox.com/es-ar/games/store/mafia-trilogy/9nkg0x1mgqtx" target="_blank" rel="noopener noreferrer" aria-label="Obtener Mafia Trilogy en Xbox Store" title="Xbox Store"><i class="fab fa-xbox mx-1"></i></a>
+                                            <a href="https://store.epicgames.com/es-ES/bundles/mafia-trilogy" target="_blank" rel="noopener noreferrer" aria-label="Obtener Mafia Trilogy en Epic Games Store" title="Epic Games Store"><i class="fas fa-gamepad mx-1"></i></a>
+                                            <a href="https://store.playstation.com/en-us/product/UP1001-CUSA03652_00-MAFIATRILOGYDEFI" target="_blank" rel="noopener noreferrer" aria-label="Obtener Mafia Trilogy en Playstation Store" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc13">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Ascenso y Caída!</h3>
+                                <p>Incluye las ediciones definitivas de Mafia, Mafia II y Mafia III.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc13">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 14: Need For Speed Heat -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://image.api.playstation.com/vulcan/ap/rnd/202210/3121/9y8pTbxVRpmB9qqFOiKsaJgA.png"" class="card-img-top" alt="Need For Speed Heat">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Need For Speed™ Heat</h5>
+                                    <p class="card-text">Compite de día y arriésgalo todo de noche en Palm City.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-info text-dark me-1">Carreras</span><span class="badge text-bg-danger me-1">Acción</span><span class="badge text-bg-warning text-dark">Tuning</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/1222680/Need_for_Speed_Heat/" target="_blank" rel="noopener noreferrer" aria-label="Obtener NFS Heat en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://www.xbox.com/es-es/games/store/need-for-speed-heat-deluxe-edition/bvh2r2sbwl51" target="_blank" rel="noopener noreferrer" aria-label="Obtener NFS Heat en Xbox Store" title="Xbox Store"><i class="fab fa-xbox mx-1"></i></a>
+                                            <a href="https://store.epicgames.com/es-ES/p/need-for-speed-heat-ccbf8d" target="_blank" rel="noopener noreferrer" aria-label="Obtener NFS Heat en Epic Games Store" title="Epic Games Store"><i class="fas fa-gamepad mx-1"></i></a>
+                                            <a href="https://store.playstation.com/en-us/product/UP0006-CUSA15081_00-DELUXEEDITION000" target="_blank" rel="noopener noreferrer" aria-label="Obtener NFS Heat en Playstation Store" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc14">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Calienta Motores!</h3>
+                                <p>Gana dinero de día y reputación en carreras ilegales nocturnas.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc14">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 15: Watch Dogs 1 -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://rdigitales.cl/wp-content/uploads/2024/11/watch-dogs-1-button-1641369103832.jpg" class="card-img-top" alt="Watch Dogs 1">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Watch_Dogs</h5>
+                                    <p class="card-text">Hackea la ciudad de Chicago como Aiden Pearce.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-danger me-1">Acción</span><span class="badge text-bg-secondary me-1">Mundo Abierto</span><span class="badge text-bg-dark">Hackeo</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/243470/Watch_Dogs/" target="_blank" rel="noopener noreferrer" aria-label="Obtener Watch Dogs 1 en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://www.xbox.com/es-es/games/store/watch_dogs/c4dmgrpnshxg" target="_blank" rel="noopener noreferrer" aria-label="Obtener Watch Dogs 1 en Xbox Store" title="Xbox Store"><i class="fab fa-xbox mx-1"></i></a>
+                                            <a href="https://store.epicgames.com/es-ES/p/watch-dogs--complete-edition" target="_blank" rel="noopener noreferrer" aria-label="Obtener Watch Dogs 1 en Epic Games Store" title="Epic Games Store"><i class="fas fa-gamepad mx-1"></i></a>
+                                            <a href="https://store.playstation.com/en-us/product/UP0001-CUSA00021_00-WATCHDOGS0000000" target="_blank" rel="noopener noreferrer" aria-label="Obtener Watch Dogs 1 en Playstation Store" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc15">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡La Ciudad es tu Arma!</h3>
+                                <p>Utiliza tus habilidades de hackeo para controlar la ciudad y buscar venganza.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc15">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 16: Watch Dogs 2 -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://image.api.playstation.com/cdn/UP0001/CUSA04459_00/qBxvfDJJ9dbavai6xsWOcWaxRDGRb7h0.png"" class="card-img-top" alt="Watch Dogs 2">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Watch_Dogs® 2</h5>
+                                    <p class="card-text">Únete a DedSec y hackea el área de la Bahía de San Francisco.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-danger me-1">Acción</span><span class="badge text-bg-secondary me-1">Mundo Abierto</span><span class="badge text-bg-dark">Hackeo</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/447040/Watch_Dogs_2/" target="_blank" rel="noopener noreferrer" aria-label="Obtener Watch Dogs 2 en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://www.xbox.com/es-es/games/store/watch-dogs-2/bsxlfn5qqzsc" target="_blank" rel="noopener noreferrer" aria-label="Obtener Watch Dogs 2 en Xbox Store" title="Xbox Store"><i class="fab fa-xbox mx-1"></i></a>
+                                            <a href="https://store.epicgames.com/es-ES/p/watch-dogs-2--deluxe-edition" target="_blank" rel="noopener noreferrer" aria-label="Obtener Watch Dogs 2 en Epic Games Store" title="Epic Games Store"><i class="fas fa-gamepad mx-1"></i></a>
+                                            <a href="https://store.playstation.com/en-us/product/UP0001-CUSA04459_00-WD2FULLGAME00000" target="_blank" rel="noopener noreferrer" aria-label="Obtener Watch Dogs 2 en Playstation Store" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc16">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Hackea el Sistema!</h3>
+                                <p>Explora un mundo abierto vibrante y usa el hackeo como tu principal herramienta.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc16">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 17: Watch Dogs Legion -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://kottagamesstore.com.ar/wp-content/uploads/2024/05/wdl.webp" class="card-img-top" alt="Watch Dogs Legion">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Watch Dogs: Legion</h5>
+                                    <p class="card-text">Recluta a cualquier ciudadano de Londres para formar tu resistencia.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-danger me-1">Acción</span><span class="badge text-bg-secondary me-1">Mundo Abierto</span><span class="badge text-bg-dark">Hackeo</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/2239550/Watch_Dogs_Legion/" target="_blank" rel="noopener noreferrer" aria-label="Obtener Watch Dogs Legion en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://www.xbox.com/es-es/games/store/watch-dogs-legion/c1wrx8zd77m9" target="_blank" rel="noopener noreferrer" aria-label="Obtener Watch Dogs Legion en Xbox Store" title="Xbox Store"><i class="fab fa-xbox mx-1"></i></a>
+                                            <a href="https://store.epicgames.com/es-ES/p/watch-dogs-legion" target="_blank" rel="noopener noreferrer" aria-label="Obtener Watch Dogs Legion en Epic Games Store" title="Epic Games Store"><i class="fas fa-gamepad mx-1"></i></a>
+                                            <a href="https://store.playstation.com/en-us/product/UP0001-PPSA01487_00-WDLDLX0000000000" target="_blank" rel="noopener noreferrer" aria-label="Obtener Watch Dogs Legion en Playstation Store" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc17">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Juega como Quieras!</h3>
+                                <p>Forma un equipo diverso con habilidades únicas para liberar Londres.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc17">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 18: Star Wars Battlefront (2015) -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://m.media-amazon.com/images/M/MV5BYjk3YjM1NGItYzhjMy00NTk2LTk2N2YtNGFlNjQ3ZjFiMDFlXkEyXkFqcGc@._V1_.jpg" class="card-img-top" alt="Star Wars Battlefront (2015)">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">STAR WARS™ Battlefront™ (2015)</h5>
+                                    <p class="card-text">Sumérgete en las batallas icónicas de Star Wars.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-danger me-1">Shooter</span><span class="badge text-bg-light text-dark me-1">Sci-Fi</span><span class="badge text-bg-info text-dark">Multijugador</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/1237980/STAR_WARS_Battlefront/" target="_blank" rel="noopener noreferrer" aria-label="Obtener SW Battlefront en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://www.xbox.com/es-es/games/store/edici%C3%B3n-ultimate-de-star-wars-battlefront/c5b4kp2nsclb" target="_blank" rel="noopener noreferrer" aria-label="Obtener SW Battlefront en Xbox Store" title="Xbox Store"><i class="fab fa-xbox mx-1"></i></a>
+                                            <a href="https://store.epicgames.com/es-ES/p/star-wars-battlefront" target="_blank" rel="noopener noreferrer" aria-label="Obtener SW Battlefront en Epic Games Store" title="Epic Games Store"><i class="fas fa-gamepad mx-1"></i></a>
+                                            <a href="https://store.playstation.com/en-us/product/UP0006-CUSA00640_00-SWBULTIMATEPREOR" target="_blank" rel="noopener noreferrer" aria-label="Obtener SW Battlefront en Playstation Store" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc18">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Batallas Galácticas!</h3>
+                                <p>Lucha en planetas emblemáticos de la trilogía original de Star Wars.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc18">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 19: Star Wars Battlefront II -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://static.wikia.nocookie.net/esstarwars/images/e/e7/Battlefront2.jpg/revision/latest?cb=20170418015441" class="card-img-top" alt="Star Wars Battlefront II">
+                                <div class="card-body d-flex flex-column">g
+                                    <h5 class="card-title">STAR WARS™ Battlefront™ II</h5>
+                                    <p class="card-text">Conviértete en héroe en la fantasía bélica de Star Wars.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-danger me-1">Shooter</span><span class="badge text-bg-light text-dark me-1">Sci-Fi</span><span class="badge text-bg-info text-dark">Multijugador</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/1237950/STAR_WARS_Battlefront_II/" target="_blank" rel="noopener noreferrer" aria-label="Obtener SW Battlefront II en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://www.xbox.com/es-es/games/store/star-wars-battlefront-ii/c0gwtpd0s8s1" target="_blank" rel="noopener noreferrer" aria-label="Obtener SW Battlefront II en Xbox Store" title="Xbox Store"><i class="fab fa-xbox mx-1"></i></a>
+                                            <a href="https://store.epicgames.com/es-ES/p/star-wars-battlefront-2" target="_blank" rel="noopener noreferrer" aria-label="Obtener SW Battlefront II en Epic Games Store" title="Epic Games Store"><i class="fas fa-gamepad mx-1"></i></a>
+                                            <a href="https://store.playstation.com/en-us/product/UP0006-CUSA05770_00-BATTLEFRONTII000" target="_blank" rel="noopener noreferrer" aria-label="Obtener SW Battlefront II en Playstation Store" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc19">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Todas las Eras!</h3>
+                                <p>Lucha en tierra y aire a través de las tres eras de Star Wars.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc19">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 20: The Last of Us Part I -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/8/86/The_Last_of_Us_Part_I_cover.jpg" class="card-img-top" alt="The Last of Us Part I">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">The Last of Us™ Part I</h5>
+                                    <p class="card-text">Experimenta la emotiva historia y personajes inolvidables.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-danger me-1">Acción</span><span class="badge text-bg-secondary me-1">Aventura</span><span class="badge text-bg-warning text-dark">Supervivencia</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/1888930/The_Last_of_Us_Part_I/" target="_blank" rel="noopener noreferrer" aria-label="Obtener TLoU Part I en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://store.epicgames.com/es-ES/p/the-last-of-us-part-1" target="_blank" rel="noopener noreferrer" aria-label="Obtener TLoU Part I en Epic Games Store" title="Epic Games Store"><i class="fas fa-gamepad mx-1"></i></a>
+                                            <a href="https://store.playstation.com/en-us/product/UP9000-PPSA03396_00-THELASTOFUSPART1" target="_blank" rel="noopener noreferrer" aria-label="Obtener TLoU Part I en Playstation Store" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc20">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Historia Aclamada!</h3>
+                                <p>Remake completo del juego original, reconstruido para PC.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc20">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Juego PC 21: The Last of Us Part II -->
+                <div class="col game-card-col">
+                    <div class="content-card h-100" tabindex="0">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://image.api.playstation.com/vulcan/ap/rnd/202312/0117/315718bce7eed62e3cf3fb02d61b81ff1782d6b6cf850fa4.png" class="card-img-top" alt="The Last of Us Part II">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">The Last of Us™ Part II Remastered</h5>
+                                    <p class="card-text">La continuación de la aclamada historia de Ellie.</p>
+                                    <p class="card-text">
+                                        <span class="badge text-bg-danger me-1">Acción</span><span class="badge text-bg-secondary me-1">Aventura</span><span class="badge text-bg-warning text-dark">Supervivencia</span>
+                                    </p>
+                                    <div class="platform-links">
+                                        <h6 class="platform-title">Consíguelo en:</h6>
+                                        <div>
+                                            <a href="https://store.steampowered.com/app/2531310/The_Last_of_Us_Parte_II_Remastered/" target="_blank" rel="noopener noreferrer" aria-label="Obtener TLoU Part II en Steam" title="Steam"><i class="fab fa-steam mx-1"></i></a>
+                                            <a href="https://store.epicgames.com/es-ES/p/the-last-of-us-part-ii-remastered" target="_blank" rel="noopener noreferrer" aria-label="Obtener TLoU Part II en Epic Games Store" title="Epic Games Store"><i class="fas fa-gamepad mx-1"></i></a>
+                                            <a href="https://store.playstation.com/en-us/product/UP9000-CUSA07820_00-THELASTOFUSPART2" target="_blank" rel="noopener noreferrer" aria-label="Obtener TLoU Part II en Playstation Store" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-vortex w-100" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc21">Ver Detalles</button>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3>¡Secuela Intensa!</h3>
+                                <p>Explora las devastadoras consecuencias físicas y emocionales de las acciones de Ellie.</p>
+                                <button type="button" class="btn btn-vortex" data-bs-toggle="modal" data-bs-target="#gameDetailModal-pc21">Más Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div> <!-- /row -->
+            </section>
+
+            <!-- Mensaje si no hay juegos -->
+            <div id="no-games-message" class="text-center lead mt-5" style="display: none;">
+                <p>😔 Parece que no hay juegos de PC que coincidan con el filtro. 😔</p>
+                <a href="juegos.html" class="btn btn-vortex-secondary mt-3">Ver Todos los Juegos de PC</a>
+            </div>
+
+            <!-- Paginación Oculta -->
+            <nav aria-label="Paginación de juegos" class="mt-5 d-flex justify-content-center" id="pagination-nav" style="display: none;"></nav>
+
+        </div> <!-- /container -->
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="mt-auto py-3" role="contentinfo">
+    <div class="container text-center">
+            <div class="social-icons mb-3">
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visita nuestro Instagram" class="social-icon-link"><i class="bi bi-instagram"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visita nuestro Twitter/X" class="social-icon-link"><i class="bi bi-twitter-x"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visita nuestro Facebook" class="social-icon-link"><i class="bi bi-facebook"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visita nuestro canal de YouTube" class="social-icon-link"><i class="bi bi-youtube"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visita nuestro TikTok" class="social-icon-link"><i class="bi bi-tiktok"></i></a>
+            </div>
+            <p class="mb-1">VORTEX PLAY © <span id="current-year">2024</span></p>
+            <p class="mb-1">Diseño inspirado en la nostalgia pixelada y plataformas modernas.</p>
+            <p class="mb-0 footer-links">
+                <a href="#">Privacidad</a><span class="mx-1" aria-hidden="true">|</span>
+                <a href="#">Términos</a><span class="mx-1" aria-hidden="true">|</span>
+                <a href="#">Cookies</a><span class="mx-1" aria-hidden="true">|</span>
+                <a href="soporte.html">Soporte</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- MODALES PARA LOS JUEGOS DE PC (CON ENLACES OFICIALES ACTUALIZADOS SEGÚN TU LISTA) -->
+
+    <!-- Modal PC 1: CoD Cold War -->
+    <div class="modal fade" id="gameDetailModal-pc1" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc1">Call of Duty: Black Ops Cold War</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Black Ops Cold War sumerge a los jugadores en lo más profundo de la volátil batalla geopolítica de la Guerra Fría, a principios de los 80. Nada es lo que parece en la fascinante campaña para un jugador.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/app/1985810/Call_of_Duty_Black_Ops_Cold_War/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://store.playstation.com/en-us/product/UP0002-CUSA15010_00-CODCWSTANDARD001" target="_blank" rel="noopener noreferrer" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 2: CoD BO III -->
+    <div class="modal fade" id="gameDetailModal-pc2" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc2">Call of Duty: Black Ops III</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Call of Duty: Black Ops III combina tres modos de juego: campaña, multijugador y Zombis, ofreciendo a los fans el Call of Duty más completo y ambicioso hasta la fecha.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/app/311210/Call_of_Duty_Black_Ops_III/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://store.playstation.com/en-us/product/UP0002-CUSA02290_00-CODBO3ZOMBIESEDN" target="_blank" rel="noopener noreferrer" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a> <a href="https://www.xbox.com/es-ar/games/store/call-of-duty-black-ops-iii/c3q2wwjj2t1h" target="_blank" rel="noopener noreferrer" title="Xbox Store"><i class="fab fa-xbox mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 3: CoD WWII -->
+    <div class="modal fade" id="gameDetailModal-pc3" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc3" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc3">Call of Duty: WWII</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Call of Duty regresa a sus raíces con Call of Duty: WWII, una experiencia sobrecogedora que redefine la Segunda Guerra Mundial para una nueva generación de jugadores.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/app/476600/Call_of_Duty_WWII/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://store.playstation.com/en-us/product/UP0002-CUSA05969_00-CODWWIIGOLDED001" target="_blank" rel="noopener noreferrer" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a> <a href="https://www.xbox.com/es-ar/games/store/call-of-duty-wwii/bv0nsd4nn4v4" target="_blank" rel="noopener noreferrer" title="Xbox Store"><i class="fab fa-xbox mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 4: Dead Rising 2 -->
+    <div class="modal fade" id="gameDetailModal-pc4" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc4" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc4">Dead Rising 2</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>La secuela del exitoso Dead Rising lleva la supervivencia zombi a Fortune City, la nueva meca del juego de América. Con nuevas armas combo y modo cooperativo.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/app/45740/Dead_Rising_2/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://store.playstation.com/en-us/product/UP0102-CUSA04313_00-DEADRISING002PS4" target="_blank" rel="noopener noreferrer" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 5: Dead Rising 3 -->
+    <div class="modal fade" id="gameDetailModal-pc5" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc5" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc5">Dead Rising 3 Apocalypse Edition</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>¡Todo es un arma en Los Perdidos! Explora la ciudad infestada de zombis y lucha por sobrevivir usando cientos de armas y vehículos combinados.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en PC: </span> <a href="https://store.steampowered.com/app/265550/Dead_Rising_3_Apocalypse_Edition/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 6: Doom (2016) -->
+    <div class="modal fade" id="gameDetailModal-pc6" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc6" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc6">DOOM (2016)</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Has venido aquí por una razón. Las enormes instalaciones de investigación de la UAC en Marte están anegadas por feroces y poderosos demonios, y solo una persona se interpone entre su mundo y el nuestro.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/app/379720/DOOM/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://store.playstation.com/en-us/product/UP1003-CUSA02085_00-DOOMNORTHAMERICA" target="_blank" rel="noopener noreferrer" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 7: Uncharted Legacy Collection -->
+    <div class="modal fade" id="gameDetailModal-pc7" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc7" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc7">UNCHARTED™: Colección Legado de ladrones</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>¿Estás listo para buscar tu fortuna? Busca tu legado y deja tu huella en el mapa en UNCHARTED: Colección Legado de Ladrones. Descubre la emocionante narración cinematográfica y la mayor acción de gran éxito de la franquicia UNCHARTED.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/app/1659420/UNCHARTED_Legacy_of_Thieves_Collection/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://store.playstation.com/en-us/product/UP9000-CUSA00341_00-U4UTLLBUNDLE0000" target="_blank" rel="noopener noreferrer" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 8: Mortal Kombat X -->
+    <div class="modal fade" id="gameDetailModal-pc8" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc8" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc8">Mortal Kombat X</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Mortal Kombat X combina una presentación cinematográfica sin igual con un juego totalmente nuevo. Por primera vez, los jugadores pueden elegir entre múltiples variaciones de cada personaje que impactan tanto en la estrategia como en el estilo de lucha.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/app/307780/Mortal_Kombat_X/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://store.playstation.com/en-us/product/UP1018-CUSA03589_00-MORTALKOMBATXL00" target="_blank" rel="noopener noreferrer" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a> <a href="https://www.xbox.com/es-ar/games/store/mortal-kombat-xl/c20209h1d7lz" target="_blank" rel="noopener noreferrer" title="Xbox Store"><i class="fab fa-xbox mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 9: Mortal Kombat 11 -->
+    <div class="modal fade" id="gameDetailModal-pc9" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc9" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc9">Mortal Kombat 11</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>MK está de vuelta y mejor que nunca en la próxima evolución de la icónica franquicia. Las nuevas Variaciones de Personajes Personalizados te dan un control sin precedentes para personalizar a los luchadores y hacerlos tuyos.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/app/976310/Mortal_Kombat_11/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://store.playstation.com/en-us/product/UP1018-PPSA01617_00-00MORTALKOMBAT11" target="_blank" rel="noopener noreferrer" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a> <a href="https://www.xbox.com/es-ar/games/store/mortal-kombat-11/btc0l0bw6lwc" target="_blank" rel="noopener noreferrer" title="Xbox Store"><i class="fab fa-xbox mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 10: Left 4 Dead 2 -->
+    <div class="modal fade" id="gameDetailModal-pc10" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc10" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc10">Left 4 Dead 2</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Ambientado en el apocalipsis zombi, Left 4 Dead 2 (L4D2) es la esperadísima secuela del galardonado Left 4 Dead, el juego cooperativo número 1 de 2008. Este FPS cooperativo de acción y terror os llevará a ti y a tus amigos por las ciudades, pantanos y cementerios del Profundo Sur.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en PC: </span> <a href="https://store.steampowered.com/app/550/Left_4_Dead_2/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 11: Lego Marvel Super Heroes -->
+    <div class="modal fade" id="gameDetailModal-pc11" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc11" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc11">Lego Marvel Super Heroes</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Lego Marvel Super Heroes presenta una historia original que cruza todo el Universo Marvel. Los jugadores toman el control de Iron Man, Spider-Man, Hulk, Capitán América, Wolverine y muchos más personajes de Marvel mientras se unen para detener a Loki.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/app/249130/LEGO_Marvel_Super_Heroes/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://store.playstation.com/en-us/product/UP1018-CUSA00083_00-LEGOMARVEL000000" target="_blank" rel="noopener noreferrer" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 12: Lego Marvel Super Heroes 2 -->
+    <div class="modal fade" id="gameDetailModal-pc12" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc12" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc12">Lego Marvel Super Heroes 2</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>¡Únete a tus superhéroes y supervillanos favoritos de diferentes épocas y realidades mientras se enfrentan al viajero del tiempo Kang el Conquistador en la nueva y original aventura, LEGO Marvel Super Heroes 2!</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/app/647830/LEGO_Marvel_Super_Heroes_2/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://store.playstation.com/en-us/product/UP1018-CUSA08469_00-LEGOMARVELSH2001" target="_blank" rel="noopener noreferrer" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 13: Mafia Trilogy -->
+    <div class="modal fade" id="gameDetailModal-pc13" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc13" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc13">Mafia: Trilogy</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Vive la vida de un gánster en tres épocas distintas del crimen organizado en Estados Unidos. Incluye las ediciones definitivas remasterizadas de Mafia, Mafia II y Mafia III.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/bundle/48195/Mafia_Trilogy/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://store.epicgames.com/es-ES/bundles/mafia-trilogy" target="_blank" rel="noopener noreferrer" title="Epic Games Store"><i class="fas fa-gamepad mx-1"></i></a> <a href="https://store.playstation.com/en-us/product/UP1001-CUSA03652_00-MAFIATRILOGYDEFI" target="_blank" rel="noopener noreferrer" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a> <a href="https://www.xbox.com/es-ar/games/store/mafia-trilogy/9nkg0x1mgqtx" target="_blank" rel="noopener noreferrer" title="Xbox Store"><i class="fab fa-xbox mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 14: Need For Speed Heat -->
+    <div class="modal fade" id="gameDetailModal-pc14" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc14" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc14">Need For Speed™ Heat</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Un emocionante juego de carreras callejeras donde las líneas de la ley se desvanecen cuando el sol comienza a ponerse. Compite en eventos autorizados durante el día y participa en carreras clandestinas por la noche.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/app/1222680/Need_for_Speed_Heat/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://store.epicgames.com/es-ES/p/need-for-speed-heat-ccbf8d" target="_blank" rel="noopener noreferrer" title="Epic Games Store"><i class="fas fa-gamepad mx-1"></i></a> <a href="https://store.playstation.com/en-us/product/UP0006-CUSA15081_00-DELUXEEDITION000" target="_blank" rel="noopener noreferrer" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a> <a href="https://www.xbox.com/es-es/games/store/need-for-speed-heat-deluxe-edition/bvh2r2sbwl51" target="_blank" rel="noopener noreferrer" title="Xbox Store"><i class="fab fa-xbox mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 15: Watch Dogs 1 -->
+    <div class="modal fade" id="gameDetailModal-pc15" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc15" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc15">Watch_Dogs</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Juegas como Aiden Pearce, un brillante hacker y antiguo matón, cuyo pasado criminal llevó a una violenta tragedia familiar. Ahora, en la búsqueda de aquellos que hirieron a tu familia, podrás monitorear y hackear a todos los que te rodean.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/app/243470/Watch_Dogs/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://store.epicgames.com/es-ES/p/watch-dogs--complete-edition" target="_blank" rel="noopener noreferrer" title="Epic Games Store"><i class="fas fa-gamepad mx-1"></i></a> <a href="https://store.playstation.com/en-us/product/UP0001-CUSA00021_00-WATCHDOGS0000000" target="_blank" rel="noopener noreferrer" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a> <a href="https://www.xbox.com/es-es/games/store/watch_dogs/c4dmgrpnshxg" target="_blank" rel="noopener noreferrer" title="Xbox Store"><i class="fab fa-xbox mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 16: Watch Dogs 2 -->
+    <div class="modal fade" id="gameDetailModal-pc16" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc16" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc16">Watch_Dogs® 2</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Bienvenido a San Francisco. Juega como Marcus Holloway, un joven y brillante hacker que vive en el lugar de nacimiento de la revolución tecnológica, el Área de la Bahía de San Francisco. Únete a Dedsec, un notorio grupo de hackers, y expón los peligros ocultos de ctOS 2.0.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/app/447040/Watch_Dogs_2/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://store.epicgames.com/es-ES/p/watch-dogs-2--deluxe-edition" target="_blank" rel="noopener noreferrer" title="Epic Games Store"><i class="fas fa-gamepad mx-1"></i></a> <a href="https://store.playstation.com/en-us/product/UP0001-CUSA04459_00-WD2FULLGAME00000" target="_blank" rel="noopener noreferrer" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a> <a href="https://www.xbox.com/es-es/games/store/watch-dogs-2/bsxlfn5qqzsc" target="_blank" rel="noopener noreferrer" title="Xbox Store"><i class="fab fa-xbox mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 17: Watch Dogs Legion -->
+    <div class="modal fade" id="gameDetailModal-pc17" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc17" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc17">Watch Dogs: Legion</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Construye una resistencia a partir de prácticamente cualquier persona que veas mientras hackeas, te infiltras y luchas para recuperar un Londres de futuro cercano que se enfrenta a su caída. Recluta y juega como cualquiera en la ciudad.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/app/2239550/Watch_Dogs_Legion/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://store.epicgames.com/es-ES/p/watch-dogs-legion" target="_blank" rel="noopener noreferrer" title="Epic Games Store"><i class="fas fa-gamepad mx-1"></i></a> <a href="https://store.playstation.com/en-us/product/UP0001-PPSA01487_00-WDLDLX0000000000" target="_blank" rel="noopener noreferrer" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a> <a href="https://www.xbox.com/es-es/games/store/watch-dogs-legion/c1wrx8zd77m9" target="_blank" rel="noopener noreferrer" title="Xbox Store"><i class="fab fa-xbox mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 18: Star Wars Battlefront (2015) -->
+    <div class="modal fade" id="gameDetailModal-pc18" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc18" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc18">STAR WARS™ Battlefront™ (2015)</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Siente el ominoso pisotón de un AT-AT retumbando en la tundra helada de Hoth. Lucha en intensas batallas multijugador en planetas icónicos y álzate a través de las filas jugando como héroes y villanos memorables.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/app/1237980/STAR_WARS_Battlefront/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://store.epicgames.com/es-ES/p/star-wars-battlefront" target="_blank" rel="noopener noreferrer" title="Epic Games Store"><i class="fas fa-gamepad mx-1"></i></a> <a href="https://store.playstation.com/en-us/product/UP0006-CUSA00640_00-SWBULTIMATEPREOR" target="_blank" rel="noopener noreferrer" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a> <a href="https://www.xbox.com/es-es/games/store/edici%C3%B3n-ultimate-de-star-wars-battlefront/c5b4kp2nsclb" target="_blank" rel="noopener noreferrer" title="Xbox Store"><i class="fab fa-xbox mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 19: Star Wars Battlefront II -->
+    <div class="modal fade" id="gameDetailModal-pc19" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc19" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc19">STAR WARS™ Battlefront™ II</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Sé el héroe en la fantasía bélica definitiva de STAR WARS™ con STAR WARS™ Battlefront™ II: Celebration Edition! Juega en enormes batallas multijugador a través de las tres eras: precuela, clásica y nueva trilogía.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/app/1237950/STAR_WARS_Battlefront_II/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://store.epicgames.com/es-ES/p/star-wars-battlefront-2" target="_blank" rel="noopener noreferrer" title="Epic Games Store"><i class="fas fa-gamepad mx-1"></i></a> <a href="https://store.playstation.com/en-us/product/UP0006-CUSA05770_00-BATTLEFRONTII000" target="_blank" rel="noopener noreferrer" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a> <a href="https://www.xbox.com/es-es/games/store/star-wars-battlefront-ii/c0gwtpd0s8s1" target="_blank" rel="noopener noreferrer" title="Xbox Store"><i class="fab fa-xbox mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 20: The Last of Us Part I -->
+    <div class="modal fade" id="gameDetailModal-pc20" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc20" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc20">The Last of Us™ Part I</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Experimenta la emotiva narración y los personajes inolvidables de The Last of Us™, ganador de más de 200 premios al Juego del Año, ahora reconstruido desde cero para PC.</p> </div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/app/1888930/The_Last_of_Us_Part_I/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://store.epicgames.com/es-ES/p/the-last-of-us-part-1" target="_blank" rel="noopener noreferrer" title="Epic Games Store"><i class="fas fa-gamepad mx-1"></i></a> <a href="https://store.playstation.com/en-us/product/UP9000-PPSA03396_00-THELASTOFUSPART1" target="_blank" rel="noopener noreferrer" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+    <!-- Modal PC 21: The Last of Us Part II Remastered -->
+    <div class="modal fade" id="gameDetailModal-pc21" tabindex="-1" aria-labelledby="gameDetailModalLabel-pc21" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <div class="modal-content modal-vortex"> <div class="modal-header"> <h1 class="modal-title fs-4" id="gameDetailModalLabel-pc21">The Last of Us™ Part II Remastered</h1> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> </div> <div class="modal-body"> <p>Cinco años después de su peligroso viaje a través de los Estados Unidos post-pandémicos, Ellie y Joel se han establecido en Jackson, Wyoming. Cuando un evento violento interrumpe esa paz, Ellie se embarca en un viaje implacable para llevar a cabo la justicia y encontrar un cierre.</p></div> <div class="modal-footer justify-content-between"> <div class="platform-links-modal"> <span class="platform-title-modal">Disponible en: </span> <a href="https://store.steampowered.com/app/2531310/The_Last_of_Us_Parte_II_Remastered/" target="_blank" rel="noopener noreferrer" title="Steam"><i class="fab fa-steam mx-1"></i></a> <a href="https://store.epicgames.com/es-ES/p/the-last-of-us-part-ii-remastered" target="_blank" rel="noopener noreferrer" title="Epic Games Store"><i class="fas fa-gamepad mx-1"></i></a> <a href="https://store.playstation.com/en-us/product/UP9000-CUSA07820_00-THELASTOFUSPART2" target="_blank" rel="noopener noreferrer" title="PlayStation Store"><i class="fab fa-playstation mx-1"></i></a> </div> <button type="button" class="btn btn-vortex-secondary" data-bs-dismiss="modal">Cerrar</button> </div> </div> </div>
+    </div>
+
+    <!-- FIN DE LOS MODALES -->
+
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!-- Script del año -->
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
+    <!-- SCRIPT DE FILTRADO -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const categoriaFiltrar = params.get('categoria');
+            const todasLasColumnas = document.querySelectorAll('#juegos-pc .game-card-col');
+            const infoFiltro = document.getElementById('filter-info');
+            const mensajeSinJuegos = document.getElementById('no-games-message');
+            const paginacion = document.getElementById('pagination-nav');
+            const seccionPC = document.getElementById('juegos-pc');
+            let totalJuegosVisibles = 0;
+
+            if (categoriaFiltrar) {
+                const nombreCategoriaMostrado = categoriaFiltrar.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+                infoFiltro.innerHTML = `Mostrando juegos de PC de la categoría: <strong>${nombreCategoriaMostrado}</strong> &nbsp; <a href="juegos.html" class="badge bg-secondary text-decoration-none">Ver todos</a>`;
+                infoFiltro.style.display = 'block';
+                if (paginacion) paginacion.style.display = 'none';
+
+                todasLasColumnas.forEach(columna => {
+                    const categoriasTarjeta = columna.dataset.categoria ? columna.dataset.categoria.split(' ') : [];
+                    if (categoriasTarjeta.includes(categoriaFiltrar)) {
+                        columna.style.display = '';
+                        totalJuegosVisibles++;
+                    } else {
+                        columna.style.display = 'none';
+                    }
+                });
+
+                if (seccionPC) {
+                    seccionPC.style.display = totalJuegosVisibles === 0 ? 'none' : '';
+                }
+                mensajeSinJuegos.style.display = totalJuegosVisibles === 0 ? 'block' : 'none';
+
+            } else {
+                todasLasColumnas.forEach(columna => { columna.style.display = ''; });
+                if (seccionPC) seccionPC.style.display = '';
+                infoFiltro.style.display = 'none';
+                mensajeSinJuegos.style.display = 'none';
+                if (paginacion) paginacion.style.display = 'none';
+            }
+        });
+    </script>
+    <!-- FIN SCRIPT FILTRADO -->
+
 </body>
 </html>

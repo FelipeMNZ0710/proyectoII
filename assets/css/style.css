@@ -1,223 +1,817 @@
+/* Importar Fuente Pixelada (¡PONER AL PRINCIPIO!) */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* =================================================== */
+/*          VORTEX PLAY - Hoja de Estilos COMPLETA     */
+/* =================================================== */
+
 /* --- Variables Globales --- */
 :root {
-    /* Colores DIRECTAMENTE del Banner Vortex Play */
-    --vp-bg-dark: #1b142b;       /* Fondo principal (Noche profunda) */
-    --vp-element-bg: #2a2144;    /* Fondo para elementos (Edificio/Bus Stop) */
-    --vp-border-subtle: #413461; /* Borde/Acento ligero (Sombra nube/edificio) */
-    --vp-text-main: #f0f0f0;    /* Texto principal (Blanco roto) */
-    --vp-text-muted: #a0a0a0;   /* Texto secundario (Grisáceo) */
-    --vp-accent-yellow: #ffd900; /* AMARILLO VIBRANTE (Título 'VORTEX PLAY') */
-    --vp-accent-pink: #ff55a3;   /* ROSA VIBRANTE (Nubes/Semáforo/Corazones) */
-    --vp-accent-cyan: #4d94ff;   /* CYAN CLARO (Señal Bus/Hydrant) */
-    --vp-accent-green: #00c853; /* Verde del árbol (ligeramente ajustado para UI) */
+    /* Paleta de Colores */
+    --vp-bg-dark: #1b142b;
+    --vp-element-bg: #2a2144;
+    --vp-element-bg-lighter: #3a3154;
+    --vp-border-subtle: #413461;
+    --vp-text-main: #f0f0f0;
+    --vp-text-muted: #a0a0a0;
+    --vp-accent-yellow: #ffd900;
+    --vp-accent-pink: #ff55a3;
+    --vp-accent-cyan: #4d94ff;
+    --vp-accent-green: #00c853;
 
-    /* Fuentes */
-    --vp-font-pixel: 'Press Start 2P', cursive;
-    --vp-font-sans: 'Roboto', sans-serif;
-
-    /* Para sombras con transparencia */
+    /* Versiones RGB (Útiles para rgba) */
     --vp-accent-pink-rgb: 255, 85, 163;
     --vp-accent-yellow-rgb: 255, 217, 0;
+    --vp-accent-cyan-rgb: 77, 148, 255;
+
+    /* Tipografía */
+    --vp-font-pixel: 'Press Start 2P', cursive;
+    --vp-font-sans: 'Roboto', sans-serif; /* Fuente secundaria legible */
+
+    /* Espaciado (Consistente) */
+    --vp-spacing-xs: 0.25rem;  /* 4px */
+    --vp-spacing-sm: 0.5rem;   /* 8px */
+    --vp-spacing-md: 1rem;    /* 16px */
+    --vp-spacing-lg: 1.5rem;  /* 24px */
+    --vp-spacing-xl: 2.5rem;  /* 40px */
+    --vp-spacing-xxl: 3rem;   /* 48px */
+
+    /* Otros */
+    --vp-navbar-height: 75px; /* Altura base navbar */
 }
 
 /* --- Estilos Base --- */
 body {
     background-color: var(--vp-bg-dark);
     color: var(--vp-text-main);
-    font-family: var(--vp-font-sans);
-    padding-top: 75px; /* Espacio para la barra de navegación más alta */
-    background-image: linear-gradient(rgba(27, 20, 43, 0.8), rgba(27, 20, 43, 0.95)),
-                      url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"%3E%3Cg fill="%232a2144" fill-opacity="0.2"%3E%3Cpath fill-rule="evenodd" d="M0 0h4v4H0V0zm4 4h4v4H4V4z"/%3E%3C/g%3E%3C/svg%3E'); /* Fondo sutil pixelado */
+    font-family: var(--vp-font-sans); /* Fuente base legible por defecto */
+    /* padding-top compensa la navbar fija */
+    padding-top: calc(var(--vp-navbar-height) + 1rem);
+    /* Fondo con gradiente sutil y patrón SVG */
+    background-image:
+        linear-gradient(rgba(27, 20, 43, 0.85), rgba(27, 20, 43, 0.98)),
+        url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"%3E%3Cg fill="%232a2144" fill-opacity="0.15"%3E%3Cpath fill-rule="evenodd" d="M0 0h4v4H0V0zm4 4h4v4H4V4z"/%3E%3C/g%3E%3C/svg%3E');
+    background-attachment: fixed; /* Fija el fondo al hacer scroll */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el footer quede abajo en páginas cortas */
 }
 
-/* --- Barra de Navegación Estilo Vortex --- */
+main {
+    flex-grow: 1; /* Permite que el main ocupe el espacio disponible */
+}
+
+/* Estilo de foco visible global para accesibilidad */
+:focus-visible {
+    outline: 3px solid var(--vp-accent-cyan);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* --- Barra de Navegación (Navbar) --- */
 .navbar {
-    background-color: rgba(27, 20, 43, 0.92); /* Fondo oscuro semi-transparente */
-    backdrop-filter: blur(8px);
-    border-bottom: 2px solid var(--vp-accent-yellow); /* Borde inferior AMARILLO */
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
+    /* Fondo semi-transparente para efecto visual */
+    background-color: rgba(27, 20, 43, 0.92) !important; /* !important útil si Bootstrap interfiere */
+    border-bottom: 2px solid var(--vp-accent-yellow);
+    padding-top: var(--vp-spacing-sm);
+    padding-bottom: var(--vp-spacing-sm);
+    min-height: var(--vp-navbar-height);
+    transition: background-color 0.3s ease;
 }
 
 .navbar-brand {
-    font-family: var(--vp-font-pixel);
+    font-family: var(--vp-font-pixel); /* Fuente pixelada para la marca */
+    font-size: 1.4rem;
     color: var(--vp-accent-yellow) !important;
-    font-size: 1.6rem; /* Más grande */
-    text-shadow: 2px 2px var(--vp-accent-pink); /* Sombra ROSA */
-    transition: transform 0.2s ease;
+    text-shadow: 2px 2px var(--vp-accent-pink);
+    transition: transform 0.2s ease, text-shadow 0.2s ease;
+    line-height: 1; /* Alineación vertical */
 }
-.navbar-brand:hover {
+.navbar-brand img {
+    margin-top: -4px; /* Ajuste fino vertical del logo */
+}
+.navbar-brand:hover,
+.navbar-brand:focus-visible {
     transform: scale(1.05);
+    text-shadow: 3px 3px var(--vp-accent-cyan);
+    outline: none; /* :focus-visible global se encarga */
 }
 
 .nav-link {
     font-family: var(--vp-font-sans);
-    color: var(--vp-text-main) !important; /* Texto claro */
-    text-transform: uppercase;
-    font-weight: 700; /* Más grueso */
     font-size: 0.95rem;
-    margin: 0 0.8rem;
-    padding: 0.5rem 0 !important; /* Ajuste padding */
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--vp-text-main) !important;
+    margin-left: var(--vp-spacing-md);
+    margin-right: var(--vp-spacing-md);
+    padding: var(--vp-spacing-sm) 0 !important; /* Ajuste padding vertical */
     border-bottom: 3px solid transparent; /* Espacio para borde hover */
     transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
-
-.nav-link:hover {
-    color: var(--vp-accent-pink) !important; /* Resaltar con ROSA */
+.nav-link:hover,
+.nav-link:focus-visible {
+    color: var(--vp-accent-pink) !important;
     border-bottom-color: var(--vp-accent-pink);
     transform: translateY(-2px);
+    outline: none; /* :focus-visible global se encarga */
 }
 .nav-link.active {
-     color: var(--vp-accent-yellow) !important; /* Activo en AMARILLO */
-     border-bottom-color: var(--vp-accent-yellow);
+    color: var(--vp-accent-yellow) !important;
+    border-bottom-color: var(--vp-accent-yellow);
 }
+
+/* Botón hamburguesa */
+.navbar-toggler {
+    border-color: rgba(var(--vp-accent-yellow-rgb), 0.5);
+}
+.navbar-toggler-icon {
+     /* SVG personalizado para el icono */
+     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 217, 0, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
 
 /* --- Banner Hero --- */
 .hero-banner-container {
-    position: relative;
-    margin-bottom: 3rem;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    position: relative; /* Para posicionar el pseudo-elemento after */
+    margin-bottom: var(--vp-spacing-xxl);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
 }
-
 .hero-banner {
-    display: block; /* Evita espacio extra debajo */
+    display: block; /* Evita espacio extra bajo la imagen */
     width: 100%;
-    /* max-height: 450px;  Podrías necesitar esto si la imagen es muy alta */
-    object-fit: cover;
-    border-bottom: 5px solid var(--vp-accent-pink); /* Borde ROSA GRUESO */
+    max-height: 400px; /* Limita altura */
+    object-fit: cover; /* Asegura que cubra el contenedor */
+    border-bottom: 5px solid var(--vp-accent-pink);
 }
-
-/* Opcional: Efecto "scanlines" sobre el banner */
+/* Efecto Scanlines sobre el banner */
 .hero-banner-container::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(rgba(27, 20, 43, 0.1) 50%, transparent 50%),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 50%, transparent 50%);
-    background-size: 100% 4px, 6px 100%; /* Líneas horizontales y verticales sutiles */
-    pointer-events: none; /* Para que no interfiera con clicks */
+    inset: 0; /* Cubre todo el contenedor padre */
+    background:
+        linear-gradient(rgba(27, 20, 43, 0.08) 50%, transparent 50%),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 50%, transparent 50%);
+    background-size: 100% 3px, 5px 100%; /* Tamaño de las líneas */
+    pointer-events: none; /* No interfiere con el ratón */
     opacity: 0.5;
+    z-index: 1; /* Se superpone a la imagen */
 }
 
-
-/* --- Títulos de Sección Estilo Pixel --- */
+/* --- Títulos de Sección --- */
 .section-title {
     font-family: var(--vp-font-pixel);
+    font-size: 1.6rem;
     color: var(--vp-accent-yellow);
-    font-size: 1.8rem; /* Título más grande */
     text-align: center;
-    margin-bottom: 2.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 4px dashed var(--vp-element-bg); /* Borde discontinuo */
-    text-shadow: 3px 3px var(--vp-accent-pink); /* Sombra ROSA más marcada */
+    margin-bottom: var(--vp-spacing-xl);
+    padding-bottom: var(--vp-spacing-md);
+    border-bottom: 4px dashed var(--vp-element-bg);
+    text-shadow: 3px 3px var(--vp-accent-pink);
+}
+/* Títulos principales (H1 o H2 importantes de página) */
+#games-title,
+#categories-title,
+#support-title,
+#featured-title,
+#news-title
+{
+    font-size: 2.0rem; /* Más grandes */
+    margin-top: var(--vp-spacing-lg);
+}
+/* Títulos específicos de Plataforma (ej: juegos.html) */
+.platform-title {
+    font-family: var(--vp-font-pixel);
+    font-size: 1.4rem;
+    color: var(--vp-accent-cyan);
+    border-bottom: 3px solid var(--vp-border-subtle);
+    padding-bottom: var(--vp-spacing-sm);
+    text-shadow: 2px 2px var(--vp-bg-dark);
+    text-align: left; /* Alinear a la izquierda */
+}
+.platform-title .bi { /* Icono dentro del título de plataforma */
+    margin-right: var(--vp-spacing-sm);
+    font-size: 1.3rem;
+    vertical-align: -2px; /* Ajuste fino vertical */
+    color: var(--vp-accent-cyan); /* Hereda color o se fuerza */
 }
 
-/* --- Tarjetas de Contenido Estilo Vortex/Pixel --- */
+
+/* --- Tarjetas de Contenido (CON VOLTEO EN HOVER) --- */
 .content-card {
-    background-color: var(--vp-element-bg);
-    border: 2px solid var(--vp-border-subtle); /* Borde más definido */
-    border-radius: 8px; /* Bordes pixelados podrían ser 0, pero 8px suaviza un poco */
-    margin-bottom: 2rem;
-    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, border-color 0.2s ease-out;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 5px 5px 0px rgba(var(--vp-accent-pink-rgb), 0.2); /* Sombra pixelada ROSA */
+    background-color: transparent; /* El fondo lo da .card-front/back */
+    border: none;
+    border-radius: 8px;
+    margin-bottom: var(--vp-spacing-lg);
+    perspective: 1000px; /* Necesario para el efecto 3D del volteo */
+    min-height: 420px; /* Altura mínima para consistencia */
+    box-shadow: none; /* Sombra sutil si se desea */
+    transition: transform 0.2s ease-out;
+    height: 100%; /* Para que funcione con grid/flex de Bootstrap */
+    display: block;
+    position: relative;
+    cursor: default; /* El botón es el elemento interactivo primario */
+    outline: none; /* :focus-visible global se encarga */
+}
+/* Foco para la tarjeta si es navegable con teclado */
+.content-card:focus-visible {
+    outline: 3px solid var(--vp-accent-cyan);
+    outline-offset: 3px;
 }
 
-.content-card:hover {
-    transform: translate(-5px, -5px); /* Efecto hover "levantado" */
-    border-color: var(--vp-accent-yellow); /* Borde AMARILLO al pasar */
-    box-shadow: 10px 10px 0px rgba(var(--vp-accent-yellow-rgb), 0.4); /* Sombra AMARILLA más grande */
-}
-
-.content-card .card-img-top {
+.card-inner {
+    position: relative;
     width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-bottom: 2px solid var(--vp-border-subtle);
-    image-rendering: pixelated; /* Intenta forzar renderizado pixelado si la imagen es adecuada */
-    filter: brightness(0.95) contrast(1.05); /* Ligero ajuste de imagen */
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.7, 0, 0.3, 1); /* Transición suave del volteo */
+    transform-style: preserve-3d; /* Mantiene el 3D durante la transformación */
+    border-radius: 8px; /* Hereda el borde redondeado */
 }
 
-.content-card .card-body {
-    padding: 1.2rem;
-    flex-grow: 1;
+/* Lógica de Volteo en Hover/Focus */
+/* Comentar/Descomentar según preferencia */
+.content-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+/* .content-card:focus-within .card-inner { */ /* Volteo al enfocar un elemento DENTRO */
+/*     transform: rotateY(180deg); */
+/* } */
+
+/* Estilos comunes para ambas caras */
+.card-front,
+.card-back {
+    position: absolute; /* Superpuestas en el mismo lugar */
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Oculta la cara trasera mientras no se ve */
+    backface-visibility: hidden;
+    border-radius: 8px; /* Mantiene bordes redondeados */
+    overflow: hidden; /* Evita que contenido sobresalga */
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: column; /* Permite usar flexbox para alinear contenido */
 }
 
-.content-card .card-title {
-    font-family: var(--vp-font-sans); /* Fuente normal para legibilidad */
+.card-front {
+    background-color: var(--vp-element-bg);
+    border: 2px solid var(--vp-border-subtle);
     color: var(--vp-text-main);
-    font-weight: 700;
-    font-size: 1.15rem;
-    margin-bottom: 0.7rem;
+    /* z-index: 2; */ /* Por defecto encima */
 }
 
-.content-card .card-text {
-    color: var(--vp-text-muted);
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 1.5rem; /* Más espacio antes del botón */
+.card-back {
+    background-color: var(--vp-element-bg-lighter);
+    border: 2px solid var(--vp-accent-pink);
+    color: var(--vp-text-main);
+    transform: rotateY(180deg); /* Rotada por defecto */
+    padding: var(--vp-spacing-lg);
+    text-align: center;
+    justify-content: center; /* Centra contenido verticalmente */
+    align-items: center; /* Centra contenido horizontalmente */
 }
+
+/* --- Estilos del CONTENIDO dentro de .card-front --- */
+.card-front .card-img-top {
+    width: 100%;
+    height: 180px; /* Altura fija para imagen */
+    object-fit: cover; /* Asegura que cubra el espacio */
+    border-bottom: 2px solid var(--vp-border-subtle);
+    /* Estilos para imágenes pixeladas */
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    filter: brightness(0.95) contrast(1.05) saturate(1.1); /* Ajuste sutil imagen */
+    flex-shrink: 0; /* Evita que la imagen se encoja */
+}
+.card-front .card-body {
+    padding: var(--vp-spacing-md);
+    flex-grow: 1; /* Ocupa espacio restante */
+    display: flex;
+    flex-direction: column; /* Organiza contenido verticalmente */
+}
+.card-front .card-title {
+    font-family: var(--vp-font-sans);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--vp-text-main);
+    margin-bottom: var(--vp-spacing-sm);
+    line-height: 1.3;
+}
+.card-front .card-text {
+    font-family: var(--vp-font-sans);
+    font-size: 0.85rem;
+    color: var(--vp-text-muted);
+    line-height: 1.5;
+    margin-bottom: var(--vp-spacing-sm);
+    flex-grow: 1; /* Empuja elementos inferiores hacia abajo */
+}
+/* Estilos para Badges/Etiquetas */
+.card-front .card-text .badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.3em 0.6em;
+    vertical-align: middle;
+    font-family: var(--vp-font-sans);
+    margin-bottom: var(--vp-spacing-xs);
+    display: inline-block; /* Necesario para margen/padding */
+    border-radius: 4px;
+}
+/* Clases de Bootstrap para colores de badges (adaptadas si es necesario) */
+.badge.text-bg-primary { background-color: #0d6efd; color: #fff; }
+.badge.text-bg-info { background-color: #0dcaf0; } /* Texto oscuro por defecto */
+.badge.text-bg-success { background-color: #198754; color: #fff; }
+.badge.text-bg-warning { background-color: #ffc107; } /* Texto oscuro por defecto */
+.badge.text-bg-danger { background-color: #dc3545; color: #fff; }
+.badge.text-bg-secondary { background-color: #6c757d; color: #fff; }
+.badge.text-bg-light { background-color: #f8f9fa; } /* Texto oscuro por defecto */
+.badge.text-bg-dark { background-color: #212529; color: #fff;}
+/* Utilidad para forzar texto oscuro en badges claros */
+.badge.text-dark { color: #212529 !important; }
+
+/* --- Estilos para Enlaces de Plataforma en Cara Frontal --- */
+.card-front .platform-links {
+    border-top: 1px dashed var(--vp-border-subtle);
+    text-align: center;
+    padding-top: var(--vp-spacing-md);
+    margin-top: var(--vp-spacing-sm);
+    margin-bottom: var(--vp-spacing-md); /* Espacio antes del botón */
+}
+.card-front .platform-title { /* Título "Consíguelo en:" */
+    font-family: var(--vp-font-sans);
+    font-size: 0.7rem;
+    color: var(--vp-text-muted);
+    margin-bottom: var(--vp-spacing-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    /* Resetea estilos heredados de .platform-title general */
+    border-bottom: none;
+    padding-bottom: 0;
+    text-shadow: none;
+    text-align: center; /* Centrado aquí */
+}
+.card-front .platform-links div { /* Contenedor de los iconos */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--vp-spacing-sm) var(--vp-spacing-md); /* Espacio entre iconos */
+}
+.card-front .platform-links a { /* Estilo de los iconos de plataforma */
+    display: inline-block;
+    color: var(--vp-text-muted);
+    font-size: 1.5rem; /* Tamaño del icono */
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+    line-height: 1; /* Alinear */
+    border-radius: 2px; /* Para el foco */
+}
+.card-front .platform-links a:hover,
+.card-front .platform-links a:focus-visible {
+    color: var(--vp-accent-yellow);
+    transform: scale(1.15);
+    outline: none; /* :focus-visible global se encarga */
+}
+/* Si usas <img> para iconos en vez de FontAwesome/BootstrapIcons */
+.platform-icon-img {
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+    opacity: 0.8;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.card-front .platform-links a:hover .platform-icon-img,
+.card-front .platform-links a:focus-visible .platform-icon-img {
+    opacity: 1;
+    transform: scale(1.15); /* Sincronizar con el <a> */
+}
+/* Botón Ver Detalles al final de la card-body */
+.card-front .card-body .btn-vortex {
+    margin-top: auto; /* Empuja el botón al fondo del flex container */
+}
+
+
+/* --- Estilos para el contenido DENTRO de .card-back --- */
+.card-back h3 {
+    font-family: var(--vp-font-pixel);
+    color: var(--vp-accent-yellow);
+    margin-bottom: var(--vp-spacing-md);
+    font-size: 1.1rem;
+}
+.card-back p {
+    font-family: var(--vp-font-sans);
+    font-size: 0.9rem;
+    color: var(--vp-text-muted);
+    line-height: 1.5;
+    margin-bottom: var(--vp-spacing-lg);
+    flex-grow: 1; /* Ayuda a empujar el botón abajo si el contenido es corto */
+}
+.card-back .btn-vortex {
+    background-color: var(--vp-accent-green); /* Color diferente para la acción */
+     margin-top: auto; /* Asegura que esté al fondo */
+}
+.card-back .btn-vortex:hover,
+.card-back .btn-vortex:focus-visible {
+     background-color: var(--vp-accent-yellow);
+     color: var(--vp-bg-dark);
+}
+
+/* --- FIN Tarjetas de Contenido --- */
+
 
 /* --- Botón Principal Estilo Vortex --- */
-.btn-vortex { /* Usamos una clase personalizada para el botón */
-    display: inline-block; /* Comportamiento de botón */
+.btn-vortex {
+    display: inline-block; /* Comportamiento de bloque pero en línea */
+    font-family: var(--vp-font-pixel);
+    font-size: 0.8rem;
+    color: var(--vp-text-main);
     background-color: var(--vp-accent-pink);
-    color: var(--vp-bg-dark); /* Texto oscuro para contraste */
-    font-family: var(--vp-font-pixel); /* Fuente Pixel para botón */
-    font-size: 0.9rem; /* Ajusta según necesites */
     text-align: center;
     text-transform: uppercase;
-    padding: 10px 18px; /* Padding pixel-friendly */
-    border: 2px solid var(--vp-bg-dark); /* Borde oscuro */
-    box-shadow: 3px 3px 0px var(--vp-bg-dark); /* Sombra dura */
     text-decoration: none;
-    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease;
+    padding: 12px 18px;
+    border: 2px solid var(--vp-bg-dark);
+    /* Efecto sombra pixelada */
+    box-shadow: 3px 3px 0px var(--vp-bg-dark);
     cursor: pointer;
+    transition:
+        transform 0.1s ease,
+        box-shadow 0.1s ease,
+        background-color 0.1s ease,
+        color 0.1s ease;
+    user-select: none; /* Evita selección de texto */
+    line-height: 1.2; /* Espaciado vertical */
+    border-radius: 4px;
+}
+/* Efecto al pasar el ratón/foco */
+.btn-vortex:hover,
+.btn-vortex:focus-visible {
+    background-color: var(--vp-accent-yellow);
+    color: var(--vp-bg-dark);
+    transform: translate(2px, 2px); /* Mueve el botón */
+    box-shadow: 1px 1px 0px var(--vp-bg-dark); /* Reduce la sombra */
+    outline: none; /* :focus-visible global se encarga */
+}
+/* Efecto al hacer clic */
+.btn-vortex:active {
+    transform: translate(3px, 3px); /* Mueve un poco más */
+    box-shadow: none; /* Quita la sombra */
 }
 
-.btn-vortex:hover {
-    background-color: var(--vp-accent-yellow); /* Cambia a AMARILLO al pasar */
+/* --- Variaciones de Botones Específicos --- */
+.btn-vortex-news { /* Botón en sección Novedades */
+    background-color: var(--vp-accent-cyan);
+    color: var(--vp-text-main);
+}
+.btn-vortex-news:hover,
+.btn-vortex-news:focus-visible {
+    background-color: var(--vp-accent-yellow);
     color: var(--vp-bg-dark);
-    transform: translate(2px, 2px); /* Efecto botón presionado */
+}
+
+.btn-vortex-search { /* Botón de búsqueda en Soporte */
+    border-radius: 0 8px 8px 0 !important; /* Redondeo solo lado derecho */
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color: var(--vp-accent-cyan);
+    color: var(--vp-text-main);
+    border-color: var(--vp-accent-cyan);
+    box-shadow: 3px 3px 0px var(--vp-bg-dark);
+    font-family: var(--vp-font-sans); /* Fuente normal */
+    font-weight: bold;
+}
+.btn-vortex-search:hover,
+.btn-vortex-search:focus-visible {
+    background-color: var(--vp-accent-yellow);
+    border-color: var(--vp-accent-yellow);
+    color: var(--vp-bg-dark);
     box-shadow: 1px 1px 0px var(--vp-bg-dark);
 }
 
-.btn-vortex:active {
-    transform: translate(3px, 3px); /* Efecto click */
-    box-shadow: 0px 0px 0px var(--vp-bg-dark);
+.btn-vortex-contact { /* Botón Enviar Mensaje en Soporte */
+    background-color: var(--vp-accent-pink);
+    color: var(--vp-text-main);
+}
+.btn-vortex-contact:hover,
+.btn-vortex-contact:focus-visible {
+    background-color: var(--vp-accent-yellow);
+    color: var(--vp-bg-dark);
+}
+
+.btn-vortex-secondary { /* Botón secundario (ej: Cerrar modal, Email directo) */
+    background-color: var(--vp-element-bg-lighter);
+    color: var(--vp-text-main);
+    border-color: var(--vp-border-subtle);
+    box-shadow: 3px 3px 0px var(--vp-border-subtle);
+    font-family: var(--vp-font-sans); /* Fuente normal */
+    font-weight: bold;
+    text-transform: none; /* Sin mayúsculas */
+    padding: 10px 15px;
+    font-size: 0.85rem; /* Ligeramente más pequeño */
+}
+.btn-vortex-secondary:hover,
+.btn-vortex-secondary:focus-visible {
+    background-color: var(--vp-border-subtle);
+    border-color: var(--vp-border-subtle);
+    color: var(--vp-text-main);
+    box-shadow: 1px 1px 0px var(--vp-border-subtle);
+    transform: translate(2px, 2px);
+    outline: none; /* :focus-visible global se encarga */
 }
 
 
-/* --- Footer --- */
-footer {
-    background-color: #110d1f; /* Aún más oscuro */
-    color: var(--vp-text-muted);
-    padding: 2.5rem 0;
-    margin-top: 5rem;
-    border-top: 4px solid var(--vp-accent-cyan); /* Borde superior CYAN */
+/* --- Sección Novedades (index.html) --- */
+.news-box {
+    background-color: var(--vp-element-bg);
+    border: 2px dashed var(--vp-border-subtle);
+    padding: var(--vp-spacing-xl);
+    border-radius: 8px;
     text-align: center;
-    font-size: 0.9rem;
+    margin-bottom: var(--vp-spacing-xxl);
+}
+.news-box .lead { /* Texto introductorio */
+    color: var(--vp-text-muted);
+    font-size: 1.1rem;
+    font-weight: normal; /* No negrita */
+    margin-bottom: var(--vp-spacing-md);
+    font-family: var(--vp-font-sans);
+}
+.news-box p:not(.lead) { /* Párrafos normales */
+    margin-bottom: var(--vp-spacing-lg);
+    font-family: var(--vp-font-sans);
+}
+
+/* --- Paginación (si se implementa) --- */
+.pagination-vortex .page-link {
+    background-color: var(--vp-element-bg);
+    border: 1px solid var(--vp-border-subtle);
+    color: var(--vp-text-main);
+    margin: 0 3px; /* Espacio entre botones */
+    border-radius: 4px;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    font-weight: 600;
+    font-family: var(--vp-font-sans);
+}
+.pagination-vortex .page-link:hover {
+    background-color: var(--vp-accent-pink);
+    border-color: var(--vp-accent-pink);
+    color: var(--vp-text-main);
+    z-index: 2; /* Asegura que esté por encima */
+}
+.pagination-vortex .page-item.active .page-link {
+    background-color: var(--vp-accent-yellow);
+    border-color: var(--vp-accent-yellow);
+    color: var(--vp-bg-dark);
+    z-index: 3; /* Aún más encima */
+}
+.pagination-vortex .page-item.disabled .page-link {
+    background-color: var(--vp-element-bg);
+    border-color: var(--vp-border-subtle);
+    color: var(--vp-text-muted);
+    opacity: 0.6; /* Indica inactividad */
+}
+.pagination-vortex .page-link:focus {
+    /* Sombra de foco personalizada, compatible con :focus-visible */
+    box-shadow: 0 0 0 0.2rem rgba(var(--vp-accent-cyan-rgb), 0.3);
+    z-index: 4;
+    outline: none;
+}
+
+/* --- Estilos Página de Soporte --- */
+/* Barra de búsqueda */
+#support-search .form-control {
+    background-color: var(--vp-element-bg);
+    color: var(--vp-text-main);
+    border: 2px solid var(--vp-border-subtle);
+    border-right: none; /* Evita doble borde con el botón */
+    border-radius: 8px 0 0 8px; /* Redondeo solo lado izquierdo */
+    padding: 0.75rem 1.25rem;
+    font-family: var(--vp-font-sans);
+}
+#support-search .form-control:focus {
+    background-color: var(--vp-element-bg); /* Mantiene color */
+    color: var(--vp-text-main);
+    border-color: var(--vp-accent-cyan); /* Cambia color borde */
+    box-shadow: 0 0 0 0.2rem rgba(var(--vp-accent-cyan-rgb), 0.25);
+    z-index: 5; /* Asegura visibilidad sobre otros elementos */
+    outline: none;
+}
+#support-search .form-control::placeholder {
+    color: var(--vp-text-muted);
+    opacity: 0.7;
+}
+/* Acordeón FAQ */
+.accordion-vortex .accordion-item {
+    background-color: transparent; /* Fondo lo da el botón/body */
+    border: 1px solid var(--vp-border-subtle);
+    margin-bottom: var(--vp-spacing-sm);
+    border-radius: 8px;
+    overflow: hidden; /* Para que el redondeo funcione */
+}
+.accordion-vortex .accordion-button { /* Botón que abre/cierra */
+    background-color: var(--vp-element-bg-lighter);
+    color: var(--vp-text-main);
+    font-weight: 700;
+    font-size: 1.1rem;
+    font-family: var(--vp-font-sans);
+    border-radius: 0; /* Sin redondeo individual */
+    box-shadow: none; /* Quita sombra de Bootstrap */
+    transition: background-color 0.2s ease, color 0.2s ease;
+    width: 100%;
+    text-align: left;
+    border: none;
+    padding: var(--vp-spacing-md) var(--vp-spacing-lg);
+}
+.accordion-vortex .accordion-button:not(.collapsed) { /* Estilo cuando está abierto */
+    background-color: var(--vp-accent-pink);
+    color: var(--vp-text-main);
+    box-shadow: none;
+}
+.accordion-vortex .accordion-button:hover,
+.accordion-vortex .accordion-button:focus { /* Hover/Focus */
+    background-color: var(--vp-accent-cyan);
+    color: var(--vp-text-main);
+    z-index: 5;
+    box-shadow: none;
+    outline: none;
+}
+.accordion-vortex .accordion-button::after { /* Icono flecha (Bootstrap) */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23f0f0f0'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    transition: transform .2s ease-in-out;
+    flex-shrink: 0; /* Evita que se encoja */
+    margin-left: auto; /* Empuja a la derecha */
+}
+.accordion-vortex .accordion-button:not(.collapsed)::after {
+    transform: rotate(-180deg); /* Gira la flecha al abrir */
+}
+.accordion-vortex .accordion-body { /* Contenido del acordeón */
+    padding: var(--vp-spacing-lg);
+    background-color: var(--vp-element-bg);
+    color: var(--vp-text-muted);
+    font-family: var(--vp-font-sans);
+    border-top: 1px solid var(--vp-border-subtle); /* Separador sutil */
+}
+/* Formulario de contacto */
+.support-form .form-label {
+    color: var(--vp-text-main);
+    font-weight: bold;
+    margin-bottom: var(--vp-spacing-xs);
+    font-family: var(--vp-font-sans);
+}
+.support-form .form-control {
+    background-color: var(--vp-element-bg);
+    color: var(--vp-text-main);
+    border: 2px solid var(--vp-border-subtle);
+    border-radius: 4px;
+    padding: 0.6rem 1rem;
+    font-family: var(--vp-font-sans);
+}
+.support-form .form-control:focus {
+    background-color: var(--vp-element-bg);
+    color: var(--vp-text-main);
+    border-color: var(--vp-accent-cyan);
+    box-shadow: 0 0 0 0.2rem rgba(var(--vp-accent-cyan-rgb), 0.25);
+    outline: none;
+}
+.support-form .form-control::placeholder {
+    color: var(--vp-text-muted);
+    opacity: 0.7;
+}
+.support-form textarea.form-control {
+    min-height: 120px; /* Altura mínima para el área de texto */
+}
+
+/* --- Pie de Página (Footer) --- */
+footer {
+    background-color: #110d1f; /* Ligeramente diferente al body */
+    color: var(--vp-text-muted);
+    padding-top: var(--vp-spacing-lg);
+    padding-bottom: var(--vp-spacing-lg);
+    margin-top: var(--vp-spacing-xxl); /* Espacio antes del footer */
+    border-top: 4px solid var(--vp-accent-cyan);
+    text-align: center;
+    font-size: 0.85rem;
+    font-family: var(--vp-font-sans);
 }
 footer p {
-    margin-bottom: 0.8rem;
+    margin-bottom: var(--vp-spacing-sm);
 }
-footer a {
+/* Enlaces en el footer */
+.footer-links a {
     color: var(--vp-accent-cyan);
     text-decoration: none;
-    margin: 0 0.7rem;
     font-weight: bold;
-    transition: color 0.2s ease;
+    margin-left: var(--vp-spacing-xs);
+    margin-right: var(--vp-spacing-xs);
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+    border-radius: 2px; /* Para el foco */
 }
-footer a:hover {
+.footer-links a:hover,
+.footer-links a:focus-visible {
     color: var(--vp-accent-yellow);
     text-decoration: underline;
-    text-shadow: 1px 1px var(--vp-accent-pink); /* Sombra rosa sutil */
+    text-shadow: 1px 1px var(--vp-accent-pink);
+    outline: none; /* :focus-visible global se encarga */
+}
+/* Separador | entre enlaces */
+.footer-links .mx-1 { /* Asumiendo uso de clase Bootstrap */
+    color: var(--vp-border-subtle);
+    margin-left: var(--vp-spacing-sm) !important;
+    margin-right: var(--vp-spacing-sm) !important;
+    user-select: none; /* No seleccionable */
+}
+
+/* Iconos de Redes Sociales en Footer */
+.social-icons a {
+    color: var(--vp-text-muted);
+    font-size: 1.5rem;
+    margin: 0 var(--vp-spacing-sm);
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block; /* Permite transform */
+}
+.social-icons a:hover,
+.social-icons a:focus-visible {
+    color: var(--vp-accent-pink);
+    transform: translateY(-3px); /* Efecto sutil al pasar/foco */
+    outline: none; /* :focus-visible global se encarga */
+}
+
+/* --- Estilos para el Modal (Bootstrap) --- */
+.modal-vortex .modal-content { /* Contenedor principal del modal */
+    background-color: var(--vp-element-bg);
+    border: 2px solid var(--vp-accent-cyan);
+    border-radius: 8px;
+    color: var(--vp-text-main);
+}
+.modal-vortex .modal-header {
+    border-bottom: 1px solid var(--vp-border-subtle);
+    padding: var(--vp-spacing-md) var(--vp-spacing-lg);
+}
+.modal-vortex .modal-header .modal-title {
+    font-family: var(--vp-font-pixel);
+    color: var(--vp-accent-yellow);
+    font-size: 1.3rem;
+}
+/* Botón 'X' para cerrar */
+.modal-vortex .btn-close-white {
+    filter: brightness(0.8) invert(1); /* Hace el 'X' blanco visible */
+    opacity: 0.7;
+}
+.modal-vortex .btn-close-white:hover {
+    opacity: 1;
+}
+
+.modal-vortex .modal-body {
+    font-family: var(--vp-font-sans);
+    color: var(--vp-text-muted);
+    padding: var(--vp-spacing-lg);
+    line-height: 1.6;
+}
+.modal-vortex .modal-footer {
+    border-top: 1px solid var(--vp-border-subtle);
+    padding: var(--vp-spacing-md) var(--vp-spacing-lg);
+    background-color: rgba(0,0,0,0.1); /* Fondo sutil */
+    display: flex;
+    justify-content: space-between; /* Espacio entre links y botón cerrar */
+    align-items: center;
+    flex-wrap: wrap; /* Si no caben los links/botón */
+    gap: var(--vp-spacing-sm); /* Espacio si se envuelven */
+}
+
+/* --- Estilos para enlaces de plataforma DENTRO del modal --- */
+.platform-links-modal {
+    text-align: left; /* Alinear a la izquierda */
+}
+.platform-title-modal { /* Texto "Disponible en:" */
+    font-family: var(--vp-font-sans);
+    font-size: 0.8rem;
+    color: var(--vp-text-muted);
+    margin-right: var(--vp-spacing-sm);
+    text-transform: uppercase;
+    font-weight: bold;
+    vertical-align: middle; /* Alinear con iconos */
+}
+/* Iconos dentro del contenedor específico del modal */
+.platform-links-modal a {
+    display: inline-block;
+    color: var(--vp-text-muted);
+    font-size: 1.4rem; /* Ligeramente más pequeños que en tarjeta */
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+    line-height: 1;
+    border-radius: 2px;
+    margin-right: var(--vp-spacing-sm);
+    vertical-align: middle;
+}
+.platform-links-modal a:last-child {
+    margin-right: 0; /* Sin margen extra en el último */
+}
+.platform-links-modal a:hover,
+.platform-links-modal a:focus-visible {
+    color: var(--vp-accent-yellow);
+    transform: scale(1.1);
+    outline: none; /* :focus-visible global se encarga */
+}
+/* Empujar botón cerrar a la derecha */
+.modal-vortex .modal-footer .btn-vortex-secondary {
+    margin-left: auto;
 }
